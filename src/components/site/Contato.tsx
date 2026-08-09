@@ -124,7 +124,7 @@ export function Agendamento() {
                 Nome completo
               </label>
               <input id="nome" name="nome" className={inputCls} placeholder="Seu nome" required />
-              {erros.nome && <p className="mt-1 text-xs text-destructive">{erros.nome}</p>}
+              {erros['nome'] && <p className="mt-1 text-xs text-destructive">{erros['nome']}</p>}
             </div>
             <div>
               <label htmlFor="telefone" className="mb-2 block text-sm font-medium">
@@ -138,7 +138,7 @@ export function Agendamento() {
                 placeholder="(46) 90000-0000"
                 required
               />
-              {erros.telefone && <p className="mt-1 text-xs text-destructive">{erros.telefone}</p>}
+              {erros['telefone'] && <p className="mt-1 text-xs text-destructive">{erros['telefone']}</p>}
             </div>
             <div>
               <label htmlFor="email" className="mb-2 block text-sm font-medium">
@@ -152,7 +152,7 @@ export function Agendamento() {
                 placeholder="voce@email.com"
                 required
               />
-              {erros.email && <p className="mt-1 text-xs text-destructive">{erros.email}</p>}
+              {erros['email'] && <p className="mt-1 text-xs text-destructive">{erros['email']}</p>}
             </div>
             <div>
               <label htmlFor="tratamento" className="mb-2 block text-sm font-medium">
@@ -168,8 +168,8 @@ export function Agendamento() {
                   </option>
                 ))}
               </select>
-              {erros.tratamento && (
-                <p className="mt-1 text-xs text-destructive">{erros.tratamento}</p>
+              {erros['tratamento'] && (
+                <p className="mt-1 text-xs text-destructive">{erros['tratamento']}</p>
               )}
             </div>
             <div>
