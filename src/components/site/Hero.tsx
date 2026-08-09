@@ -14,7 +14,14 @@ export function Hero() {
         height={1200}
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 -z-10 gradient-hero opacity-90" />
+      <div
+        className="absolute inset-0 -z-10"
+        style={{
+          backgroundImage:
+            "linear-gradient(100deg, oklch(0.28 0.12 18 / 0.96) 0%, oklch(0.32 0.13 18 / 0.85) 42%, oklch(0.35 0.14 18 / 0.35) 75%, oklch(0.35 0.14 18 / 0.15) 100%)",
+        }}
+      />
+
 
       <div className="mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-center px-5 pt-32 pb-16 lg:px-8">
         <div className="max-w-2xl text-primary-foreground">
