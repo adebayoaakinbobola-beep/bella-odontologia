@@ -152,7 +152,7 @@ const tratamentos = [
     icon: Sparkles,
     nome: "Clareamento Dental",
     desc: "Clareamento seguro em consultório ou supervisionado, com resultados naturais.",
-    img: blogEscovacao,
+    img: sorrisoImg,
   },
   {
     icon: Layers,
