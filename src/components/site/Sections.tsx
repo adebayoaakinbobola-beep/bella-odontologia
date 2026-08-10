@@ -33,6 +33,10 @@ import tratEstetica from "@/assets/trat-estetica.jpg";
 import draFoto1 from "@/assets/dra-danielle.jpeg.asset.json";
 import draFoto2 from "@/assets/dra-danielle_1.jpeg.asset.json";
 import draFoto3 from "@/assets/dra-danielle_2.jpeg.asset.json";
+import blogEscovacao from "@/assets/blog-escovacao.jpg";
+import blogEscova from "@/assets/blog-escova.jpg";
+import blogImplante from "@/assets/blog-implante.jpg";
+import blogClareamento from "@/assets/blog-clareamento.jpg";
 
 function SectionTitle({
   eyebrow,
