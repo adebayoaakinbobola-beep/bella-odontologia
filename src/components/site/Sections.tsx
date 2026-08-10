@@ -664,7 +664,7 @@ const posts = [
   {
     t: "Como cuidar dos dentes no dia a dia",
     d: "Escovação, fio dental e alimentação: o trio que evita 90% dos problemas bucais.",
-    img: sorrisoImg,
+    img: blogEscovacao,
   },
   {
     t: "Quando trocar a escova de dentes?",
