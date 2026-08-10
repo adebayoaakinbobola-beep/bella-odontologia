@@ -407,12 +407,14 @@ export function Equipe() {
           {equipe.map((p, i) => (
             <Reveal key={p.esp} delay={i * 100}>
               <article className="h-full overflow-hidden rounded-3xl bg-card shadow-card">
-                <img
-                  src={p.foto}
-                  alt={`${p.nome}, ${p.esp}`}
-                  loading="lazy"
-                  className="h-80 w-full object-cover object-top"
-                />
+                <div className="flex h-80 w-full items-center justify-center bg-muted">
+                  <img
+                    src={p.foto}
+                    alt={`${p.nome}, ${p.esp}`}
+                    loading="lazy"
+                    className="h-full w-full object-contain"
+                  />
+                </div>
                 <div className="p-6">
                   <h3 className="font-display text-xl">{p.nome}</h3>
                   <p className="mt-1 text-sm font-medium text-primary">{p.esp}</p>
