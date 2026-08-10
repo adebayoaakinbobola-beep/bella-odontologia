@@ -152,7 +152,7 @@ const tratamentos = [
     icon: Sparkles,
     nome: "Clareamento Dental",
     desc: "Clareamento seguro em consultório ou supervisionado, com resultados naturais.",
-    img: sorrisoImg,
+    img: blogEscovacao,
   },
   {
     icon: Layers,
@@ -669,17 +669,17 @@ const posts = [
   {
     t: "Quando trocar a escova de dentes?",
     d: "A cada 3 meses ou antes, se as cerdas estiverem abertas. Entenda o porquê.",
-    img: tratEstetica,
+    img: blogEscova,
   },
   {
     t: "Implante dentário vale a pena?",
     d: "Comparamos implante, ponte e prótese removível em custo, conforto e durabilidade.",
-    img: tratImplante,
+    img: blogImplante,
   },
   {
     t: "Mitos e verdades sobre clareamento",
     d: "Clareamento enfraquece o dente? Respondemos as dúvidas mais comuns.",
-    img: tratOrto,
+    img: blogClareamento,
   },
 ];
 
