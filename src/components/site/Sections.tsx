@@ -33,6 +33,10 @@ import tratEstetica from "@/assets/trat-estetica.jpg";
 import draFoto1 from "@/assets/dra-danielle.jpeg.asset.json";
 import draFoto2 from "@/assets/dra-danielle_1.jpeg.asset.json";
 import draFoto3 from "@/assets/dra-danielle_2.jpeg.asset.json";
+import blogEscovacao from "@/assets/blog-escovacao.jpg";
+import blogEscova from "@/assets/blog-escova.jpg";
+import blogImplante from "@/assets/blog-implante.jpg";
+import blogClareamento from "@/assets/blog-clareamento.jpg";
 
 function SectionTitle({
   eyebrow,
@@ -660,22 +664,22 @@ const posts = [
   {
     t: "Como cuidar dos dentes no dia a dia",
     d: "Escovação, fio dental e alimentação: o trio que evita 90% dos problemas bucais.",
-    img: sorrisoImg,
+    img: blogEscovacao,
   },
   {
     t: "Quando trocar a escova de dentes?",
     d: "A cada 3 meses ou antes, se as cerdas estiverem abertas. Entenda o porquê.",
-    img: tratEstetica,
+    img: blogEscova,
   },
   {
     t: "Implante dentário vale a pena?",
     d: "Comparamos implante, ponte e prótese removível em custo, conforto e durabilidade.",
-    img: tratImplante,
+    img: blogImplante,
   },
   {
     t: "Mitos e verdades sobre clareamento",
     d: "Clareamento enfraquece o dente? Respondemos as dúvidas mais comuns.",
-    img: tratOrto,
+    img: blogClareamento,
   },
 ];
 
