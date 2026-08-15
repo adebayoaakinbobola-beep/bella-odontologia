@@ -26,10 +26,12 @@ import {
 import { Reveal, useCountUp } from "./Reveal";
 import { CLINIC, whatsappLink } from "@/lib/clinic";
 import estruturaImg from "@/assets/estrutura-clinica.jpg";
-import sorrisoImg from "@/assets/sorriso.jpg";
-import tratImplante from "@/assets/trat-implante.jpg";
-import tratOrto from "@/assets/trat-orto.jpg";
-import tratEstetica from "@/assets/trat-estetica.jpg";
+import sorrisoImg from "@/assets/sorriso-new.jpg";
+import tratImplante from "@/assets/trat-implante-new.jpg";
+import tratOrto from "@/assets/trat-orto-new.jpg";
+import tratEstetica from "@/assets/trat-estetica-new.jpg";
+import tratGeral from "@/assets/trat-geral-new.jpg";
+import tratCanal from "@/assets/trat-canal-new.jpg";
 import draFoto1 from "@/assets/dra-danielle.jpeg.asset.json";
 import draFoto2 from "@/assets/dra-danielle_1.jpeg.asset.json";
 import draFoto3 from "@/assets/dra-danielle_2.jpeg.asset.json";
@@ -170,19 +172,19 @@ const tratamentos = [
     icon: Brush,
     nome: "Odontologia Preventiva",
     desc: "Check-up preventivo, limpeza profissional e orientações para manter a saúde bucal.",
-    img: tratEstetica,
+    img: tratGeral,
   },
   {
     icon: Syringe,
     nome: "Endodontia",
     desc: "Tratamento de canal com técnicas avançadas para alívio da dor e preservação do dente.",
-    img: tratImplante,
+    img: tratCanal,
   },
   {
     icon: HeartPulse,
     nome: "Periodontia",
     desc: "Cuidados com a saúde da gengiva e tecidos de sustentação dos dentes.",
-    img: tratEstetica,
+    img: tratGeral,
   },
   {
     icon: Smile,
@@ -212,7 +214,7 @@ const tratamentos = [
     icon: Siren,
     nome: "Urgências",
     desc: "Atendimento imediato para alívio de dor e situações emergenciais.",
-    img: tratImplante,
+    img: tratGeral,
   },
 ];
 
