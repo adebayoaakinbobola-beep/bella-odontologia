@@ -172,19 +172,19 @@ const tratamentos = [
     icon: Brush,
     nome: "Odontologia Preventiva",
     desc: "Check-up preventivo, limpeza profissional e orientações para manter a saúde bucal.",
-    img: tratEstetica,
+    img: tratGeral,
   },
   {
     icon: Syringe,
     nome: "Endodontia",
     desc: "Tratamento de canal com técnicas avançadas para alívio da dor e preservação do dente.",
-    img: tratImplante,
+    img: tratCanal,
   },
   {
     icon: HeartPulse,
     nome: "Periodontia",
     desc: "Cuidados com a saúde da gengiva e tecidos de sustentação dos dentes.",
-    img: tratEstetica,
+    img: tratGeral,
   },
   {
     icon: Smile,
@@ -214,7 +214,7 @@ const tratamentos = [
     icon: Siren,
     nome: "Urgências",
     desc: "Atendimento imediato para alívio de dor e situações emergenciais.",
-    img: tratImplante,
+    img: tratGeral,
   },
 ];
 
