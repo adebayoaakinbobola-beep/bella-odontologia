@@ -329,11 +329,10 @@ export function PorQue() {
 }
 
 const etapas = [
-  { t: "Agende sua consulta", d: "Pelo WhatsApp, telefone ou formulário, em menos de 2 minutos." },
-  { t: "Avaliação completa", d: "Exame clínico, radiográfico e escuta atenta das suas queixas." },
-  { t: "Plano personalizado", d: "Você recebe o plano, prazos e orçamento detalhado, sem surpresas." },
-  { t: "Realização do procedimento", d: "Execução com técnica, conforto e anestesia indolor." },
-  { t: "Acompanhamento", d: "Retornos programados para garantir resultado duradouro." },
+  { t: "Agende sua Consulta", d: "Entre em contato pelo WhatsApp ou telefone para escolher o melhor horário." },
+  { t: "Avaliação Detalhada", d: "Na primeira consulta, realizamos um exame minucioso para entender suas necessidades." },
+  { t: "Plano de Tratamento", d: "Apresentamos as melhores opções, explicadas com clareza e transparência." },
+  { t: "Seu Novo Sorriso", d: "Execução do tratamento com foco total no seu conforto e em resultados duradouros." },
 ];
 
 export function ComoFunciona() {
