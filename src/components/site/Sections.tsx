@@ -39,6 +39,10 @@ import blogEscovacao from "@/assets/blog-escovacao.jpg";
 import blogEscova from "@/assets/blog-escova.jpg";
 import blogImplante from "@/assets/blog-implante.jpg";
 import blogClareamento from "@/assets/blog-clareamento.jpg";
+import ad1 from "@/assets/antes-depois-1.jpg";
+import ad2 from "@/assets/antes-depois-2.jpg";
+import ad3 from "@/assets/antes-depois-3.jpg";
+import ad4 from "@/assets/antes-depois-4.jpg";
 
 function SectionTitle({
   eyebrow,
@@ -429,7 +433,7 @@ const categorias = ["Clareamento", "Lentes e Facetas", "Implantes", "Ortodontia"
 
 export function AntesDepois() {
   const [cat, setCat] = useState<(typeof categorias)[number]>("Clareamento");
-  const imgs = [sorrisoImg, tratEstetica, tratImplante, tratOrto];
+  const imgs = [ad1, ad2, ad3, ad4];
 
   return (
     <section id="resultados" className="bg-background py-24">
