@@ -27,7 +27,7 @@ const schema = {
   "@type": "Dentist",
   name: CLINIC.name,
   description,
-  telephone: "+55-46-3035-0404",
+  telephone: CLINIC.phone,
   email: CLINIC.email,
   url: "/",
   address: {
@@ -47,7 +47,7 @@ const schema = {
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "08:00",
+      opens: "08:30",
       closes: "18:30",
     },
     {

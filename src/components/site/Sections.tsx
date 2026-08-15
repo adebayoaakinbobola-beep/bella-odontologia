@@ -107,20 +107,20 @@ export function Sobre() {
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
               {
-                t: "Nossa missão",
-                d: "Devolver saúde, função e autoestima através de um sorriso saudável.",
+                t: "Nossa Missão",
+                d: "Oferecer odontologia de alta qualidade, aliando conhecimento técnico a um atendimento acolhedor e personalizado.",
               },
               {
-                t: "Nossos valores",
-                d: "Ética, transparência, empatia e atualização científica constante.",
+                t: "Profissionalismo",
+                d: "Corpo clínico altamente capacitado e em constante atualização com as melhores práticas da odontologia moderna.",
               },
               {
-                t: "Estrutura moderna",
-                d: "Consultórios equipados com raio-x digital e instrumentais de última geração.",
+                t: "Tecnologia",
+                d: "Utilizamos equipamentos de ponta para garantir diagnósticos precisos e tratamentos mais eficientes e confortáveis.",
               },
               {
-                t: "Atendimento personalizado",
-                d: "Plano de tratamento sob medida, explicado passo a passo antes de começar.",
+                t: "Bem-estar",
+                d: "Um ambiente planejado para que sua experiência no dentista seja positiva, tranquila e segura.",
               },
             ].map((i) => (
               <div key={i.t}>
@@ -143,87 +143,75 @@ export function Sobre() {
 
 const tratamentos = [
   {
-    icon: Brush,
-    nome: "Limpeza Dental",
-    desc: "Profilaxia profissional que remove placa e tártaro, prevenindo cáries e gengivite.",
-    img: tratEstetica,
+    icon: Anchor,
+    nome: "Implantes Dentários",
+    desc: "Reabilitação oral com implantes de alta tecnologia para devolver função e estética.",
+    img: tratImplante,
   },
   {
     icon: Sparkles,
     nome: "Clareamento Dental",
-    desc: "Clareamento seguro em consultório ou supervisionado, com resultados naturais.",
+    desc: "Técnicas modernas para um sorriso mais branco e brilhante com segurança.",
     img: sorrisoImg,
   },
   {
     icon: Layers,
     nome: "Lentes de Contato Dental",
-    desc: "Lâminas ultrafinas de porcelana que redesenham o sorriso com naturalidade.",
+    desc: "Transformação estética com lâminas ultrafinas de porcelana de alta durabilidade.",
     img: tratEstetica,
-  },
-  {
-    icon: Anchor,
-    nome: "Implantes Dentários",
-    desc: "Reposição de dentes perdidos com titânio de alta performance e planejamento digital.",
-    img: tratImplante,
   },
   {
     icon: AlignCenter,
     nome: "Ortodontia",
-    desc: "Aparelhos fixos estéticos e autoligados para alinhar mordida e dentes.",
+    desc: "Aparelhos fixos e alinhadores invisíveis para correção do posicionamento dental.",
     img: tratOrto,
   },
   {
-    icon: Smile,
-    nome: "Alinhadores Invisíveis",
-    desc: "Tratamento tipo Invisalign: transparente, removível e confortável no dia a dia.",
-    img: tratOrto,
-  },
-  {
-    icon: Gem,
-    nome: "Facetas em Porcelana",
-    desc: "Correção de forma, cor e proporção com máxima resistência estética.",
+    icon: Brush,
+    nome: "Odontologia Preventiva",
+    desc: "Check-up preventivo, limpeza profissional e orientações para manter a saúde bucal.",
     img: tratEstetica,
   },
   {
-    icon: ShieldCheck,
-    nome: "Próteses",
-    desc: "Próteses fixas, removíveis e sobre implante com encaixe preciso.",
-    img: tratImplante,
-  },
-  {
     icon: Syringe,
-    nome: "Tratamento de Canal",
-    desc: "Endodontia moderna, praticamente indolor, preservando o dente natural.",
+    nome: "Endodontia",
+    desc: "Tratamento de canal com técnicas avançadas para alívio da dor e preservação do dente.",
     img: tratImplante,
-  },
-  {
-    icon: Stethoscope,
-    nome: "Extrações",
-    desc: "Cirurgias e remoção de sisos com técnica minimamente invasiva.",
-    img: tratImplante,
-  },
-  {
-    icon: Baby,
-    nome: "Odontopediatria",
-    desc: "Atendimento lúdico e afetuoso para que a criança ame ir ao dentista.",
-    img: tratOrto,
   },
   {
     icon: HeartPulse,
     nome: "Periodontia",
-    desc: "Tratamento da gengiva e dos tecidos de suporte, base de todo sorriso saudável.",
+    desc: "Cuidados com a saúde da gengiva e tecidos de sustentação dos dentes.",
     img: tratEstetica,
   },
   {
-    icon: Wand2,
-    nome: "Harmonização Orofacial",
-    desc: "Procedimentos faciais que equilibram o conjunto sorriso e rosto.",
+    icon: Smile,
+    nome: "Odontologia Estética",
+    desc: "Procedimentos restauradores e cosméticos para harmonizar o seu sorriso.",
     img: sorrisoImg,
   },
   {
+    icon: Gem,
+    nome: "Prótese Dentária",
+    desc: "Soluções fixas ou removíveis para reposição de dentes com naturalidade.",
+    img: tratImplante,
+  },
+  {
+    icon: Wand2,
+    nome: "Odontopediatria",
+    desc: "Atendimento especializado e humanizado para bebês, crianças e adolescentes.",
+    img: tratOrto,
+  },
+  {
+    icon: Stethoscope,
+    nome: "Cirurgia Oral",
+    desc: "Procedimentos cirúrgicos de pequeno porte, incluindo extração de sisos.",
+    img: tratImplante,
+  },
+  {
     icon: Siren,
-    nome: "Emergência Odontológica",
-    desc: "Dor, trauma ou restauração quebrada? Atendimento com prioridade.",
+    nome: "Urgências",
+    desc: "Atendimento imediato para alívio de dor e situações emergenciais.",
     img: tratImplante,
   },
 ];
@@ -341,11 +329,10 @@ export function PorQue() {
 }
 
 const etapas = [
-  { t: "Agende sua consulta", d: "Pelo WhatsApp, telefone ou formulário, em menos de 2 minutos." },
-  { t: "Avaliação completa", d: "Exame clínico, radiográfico e escuta atenta das suas queixas." },
-  { t: "Plano personalizado", d: "Você recebe o plano, prazos e orçamento detalhado, sem surpresas." },
-  { t: "Realização do procedimento", d: "Execução com técnica, conforto e anestesia indolor." },
-  { t: "Acompanhamento", d: "Retornos programados para garantir resultado duradouro." },
+  { t: "Agende sua Consulta", d: "Entre em contato pelo WhatsApp ou telefone para escolher o melhor horário." },
+  { t: "Avaliação Detalhada", d: "Na primeira consulta, realizamos um exame minucioso para entender suas necessidades." },
+  { t: "Plano de Tratamento", d: "Apresentamos as melhores opções, explicadas com clareza e transparência." },
+  { t: "Seu Novo Sorriso", d: "Execução do tratamento com foco total no seu conforto e em resultados duradouros." },
 ];
 
 export function ComoFunciona() {
@@ -377,23 +364,23 @@ export function ComoFunciona() {
 const equipe = [
   {
     nome: "Dra. Danielle C. Lourenço",
-    esp: "Cirurgiã-Dentista · Clínica Geral e Estética",
-    reg: "CRO-PR",
-    bio: "Responsável técnica da clínica, dedica-se à odontologia estética e restauradora com foco em resultados naturais e atendimento acolhedor.",
+    esp: "Cirurgiã-Dentista",
+    reg: "CRO-PR 22533",
+    bio: "Responsável Técnica e especialista dedicada a oferecer tratamentos odontológicos com excelência, ética e um olhar humanizado para cada sorriso.",
     foto: draFoto1.url,
   },
   {
     nome: "Dra. Danielle C. Lourenço",
-    esp: "Odontopediatria",
-    reg: "CRO-PR",
-    bio: "Atendimento infantil lúdico e afetuoso, criando uma relação positiva da criança com o dentista desde a primeira consulta.",
+    esp: "Clínica Geral e Estética",
+    reg: "CRO-PR 22533",
+    bio: "Focada em reabilitação oral e estética, unindo tecnologia e sensibilidade para transformar a vida dos pacientes através da saúde bucal.",
     foto: draFoto2.url,
   },
   {
     nome: "Dra. Danielle C. Lourenço",
-    esp: "Dentística e Prevenção",
-    reg: "CRO-PR",
-    bio: "Especialista em procedimentos minimamente invasivos, unindo tecnologia digital e precisão clínica em cada tratamento.",
+    esp: "Prevenção e Diagnóstico",
+    reg: "CRO-PR 22533",
+    bio: "Especialista em diagnósticos precisos e protocolos preventivos, garantindo a manutenção da saúde e longevidade dos tratamentos realizados.",
     foto: draFoto3.url,
   },
 ];
