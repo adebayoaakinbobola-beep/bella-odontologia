@@ -107,20 +107,20 @@ export function Sobre() {
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
               {
-                t: "Nossa missão",
-                d: "Devolver saúde, função e autoestima através de um sorriso saudável.",
+                t: "Nossa Missão",
+                d: "Oferecer odontologia de alta qualidade, aliando conhecimento técnico a um atendimento acolhedor e personalizado.",
               },
               {
-                t: "Nossos valores",
-                d: "Ética, transparência, empatia e atualização científica constante.",
+                t: "Profissionalismo",
+                d: "Corpo clínico altamente capacitado e em constante atualização com as melhores práticas da odontologia moderna.",
               },
               {
-                t: "Estrutura moderna",
-                d: "Consultórios equipados com raio-x digital e instrumentais de última geração.",
+                t: "Tecnologia",
+                d: "Utilizamos equipamentos de ponta para garantir diagnósticos precisos e tratamentos mais eficientes e confortáveis.",
               },
               {
-                t: "Atendimento personalizado",
-                d: "Plano de tratamento sob medida, explicado passo a passo antes de começar.",
+                t: "Bem-estar",
+                d: "Um ambiente planejado para que sua experiência no dentista seja positiva, tranquila e segura.",
               },
             ].map((i) => (
               <div key={i.t}>
