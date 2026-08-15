@@ -26,10 +26,12 @@ import {
 import { Reveal, useCountUp } from "./Reveal";
 import { CLINIC, whatsappLink } from "@/lib/clinic";
 import estruturaImg from "@/assets/estrutura-clinica.jpg";
-import sorrisoImg from "@/assets/sorriso.jpg";
-import tratImplante from "@/assets/trat-implante.jpg";
-import tratOrto from "@/assets/trat-orto.jpg";
-import tratEstetica from "@/assets/trat-estetica.jpg";
+import sorrisoImg from "@/assets/sorriso-new.jpg";
+import tratImplante from "@/assets/trat-implante-new.jpg";
+import tratOrto from "@/assets/trat-orto-new.jpg";
+import tratEstetica from "@/assets/trat-estetica-new.jpg";
+import tratGeral from "@/assets/trat-geral-new.jpg";
+import tratCanal from "@/assets/trat-canal-new.jpg";
 import draFoto1 from "@/assets/dra-danielle.jpeg.asset.json";
 import draFoto2 from "@/assets/dra-danielle_1.jpeg.asset.json";
 import draFoto3 from "@/assets/dra-danielle_2.jpeg.asset.json";
