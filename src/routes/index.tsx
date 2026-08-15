@@ -115,7 +115,6 @@ function Index() {
         <PorQue />
         <ComoFunciona />
         <Equipe />
-        <AntesDepois />
         <Depoimentos />
         <Numeros />
         <FAQ />
