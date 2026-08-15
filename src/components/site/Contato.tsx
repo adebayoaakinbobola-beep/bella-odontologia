@@ -25,14 +25,14 @@ const schema = z.object({
 });
 
 const opcoes = [
-  "Avaliação geral",
-  "Limpeza dental",
-  "Clareamento",
-  "Lentes / Facetas",
-  "Implantes",
-  "Ortodontia / Alinhadores",
+  "Avaliação Geral",
+  "Implantes Dentários",
+  "Clareamento Dental",
+  "Lentes de Contato",
+  "Ortodontia",
   "Odontopediatria",
-  "Emergência",
+  "Endodontia (Canal)",
+  "Urgência Odontológica",
 ];
 
 export function Agendamento() {
