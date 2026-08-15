@@ -365,23 +365,23 @@ export function ComoFunciona() {
 const equipe = [
   {
     nome: "Dra. Danielle C. Lourenço",
-    esp: "Cirurgiã-Dentista · Clínica Geral e Estética",
-    reg: "CRO-PR",
-    bio: "Responsável técnica da clínica, dedica-se à odontologia estética e restauradora com foco em resultados naturais e atendimento acolhedor.",
+    esp: "Cirurgiã-Dentista",
+    reg: "CRO-PR 22533",
+    bio: "Responsável Técnica e especialista dedicada a oferecer tratamentos odontológicos com excelência, ética e um olhar humanizado para cada sorriso.",
     foto: draFoto1.url,
   },
   {
     nome: "Dra. Danielle C. Lourenço",
-    esp: "Odontopediatria",
-    reg: "CRO-PR",
-    bio: "Atendimento infantil lúdico e afetuoso, criando uma relação positiva da criança com o dentista desde a primeira consulta.",
+    esp: "Clínica Geral e Estética",
+    reg: "CRO-PR 22533",
+    bio: "Focada em reabilitação oral e estética, unindo tecnologia e sensibilidade para transformar a vida dos pacientes através da saúde bucal.",
     foto: draFoto2.url,
   },
   {
     nome: "Dra. Danielle C. Lourenço",
-    esp: "Dentística e Prevenção",
-    reg: "CRO-PR",
-    bio: "Especialista em procedimentos minimamente invasivos, unindo tecnologia digital e precisão clínica em cada tratamento.",
+    esp: "Prevenção e Diagnóstico",
+    reg: "CRO-PR 22533",
+    bio: "Especialista em diagnósticos precisos e protocolos preventivos, garantindo a manutenção da saúde e longevidade dos tratamentos realizados.",
     foto: draFoto3.url,
   },
 ];
