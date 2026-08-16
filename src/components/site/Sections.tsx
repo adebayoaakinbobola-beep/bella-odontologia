@@ -32,9 +32,9 @@ import tratOrto from "@/assets/trat-orto-new.jpg";
 import tratEstetica from "@/assets/trat-estetica-new.jpg";
 import tratGeral from "@/assets/trat-geral-new.jpg";
 import tratCanal from "@/assets/trat-canal-new.jpg";
-import draFoto1 from "@/assets/dra-danielle.jpeg.asset.json";
-import draFoto2 from "@/assets/dra-danielle_1.jpeg.asset.json";
-import draFoto3 from "@/assets/dra-danielle_2.jpeg.asset.json";
+import draFoto1 from "@/assets/dra-danielle.jpeg";
+import draFoto2 from "@/assets/dra-danielle_1.jpeg";
+import draFoto3 from "@/assets/dra-danielle_2.jpeg";
 import blogEscovacao from "@/assets/blog-escovacao.jpg";
 import blogEscova from "@/assets/blog-escova.jpg";
 import blogImplante from "@/assets/blog-implante.jpg";
@@ -373,21 +373,21 @@ const equipe = [
     esp: "Cirurgiã-Dentista",
     reg: "CRO-PR 22533",
     bio: "Responsável Técnica e especialista dedicada a oferecer tratamentos odontológicos com excelência, ética e um olhar humanizado para cada sorriso.",
-    foto: draFoto1.url,
+    foto: draFoto1,
   },
   {
     nome: "Dra. Danielle C. Lourenço",
     esp: "Clínica Geral e Estética",
     reg: "CRO-PR 22533",
     bio: "Focada em reabilitação oral e estética, unindo tecnologia e sensibilidade para transformar a vida dos pacientes através da saúde bucal.",
-    foto: draFoto2.url,
+    foto: draFoto2,
   },
   {
     nome: "Dra. Danielle C. Lourenço",
     esp: "Prevenção e Diagnóstico",
     reg: "CRO-PR 22533",
     bio: "Especialista em diagnósticos precisos e protocolos preventivos, garantindo a manutenção da saúde e longevidade dos tratamentos realizados.",
-    foto: draFoto3.url,
+    foto: draFoto3,
   },
 ];
 
