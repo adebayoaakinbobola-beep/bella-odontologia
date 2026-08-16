@@ -43,6 +43,9 @@ import ad1 from "@/assets/antes-depois-1.jpg";
 import ad2 from "@/assets/antes-depois-2.jpg";
 import ad3 from "@/assets/antes-depois-3.jpg";
 import ad4 from "@/assets/antes-depois-4.jpg";
+const draFoto1 = draAsset1.url;
+const draFoto2 = draAsset2.url;
+const draFoto3 = draAsset3.url;
 
 function SectionTitle({
   eyebrow,
