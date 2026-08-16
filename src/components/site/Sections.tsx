@@ -40,9 +40,9 @@ import ad1 from "@/assets/antes-depois-1.jpg";
 import ad2 from "@/assets/antes-depois-2.jpg";
 import ad3 from "@/assets/antes-depois-3.jpg";
 import ad4 from "@/assets/antes-depois-4.jpg";
-const draFoto1 = "/__l5e/assets-v1/f8200c89-713f-4349-8799-3a92c5944456/dra-danielle.jpeg";
-const draFoto2 = "/__l5e/assets-v1/7cdf44f6-b89d-45e2-a441-fe101d079278/dra-danielle_1.jpeg";
-const draFoto3 = "/__l5e/assets-v1/9eaeff59-3b51-45a9-bc2a-69e3e0f0126a/dra-danielle_2.jpeg";
+import draFoto1 from "@/assets/dra-danielle.jpeg";
+import draFoto2 from "@/assets/dra-danielle-1.jpeg";
+import draFoto3 from "@/assets/dra-danielle-2.jpeg";
 
 function SectionTitle({
   eyebrow,
