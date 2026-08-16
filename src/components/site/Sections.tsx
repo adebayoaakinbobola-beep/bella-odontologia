@@ -32,9 +32,9 @@ import tratOrto from "@/assets/trat-orto-new.jpg";
 import tratEstetica from "@/assets/trat-estetica-new.jpg";
 import tratGeral from "@/assets/trat-geral-new.jpg";
 import tratCanal from "@/assets/trat-canal-new.jpg";
-import draFoto1 from "@/assets/dra-danielle.jpeg";
-import draFoto2 from "@/assets/dra-danielle_1.jpeg";
-import draFoto3 from "@/assets/dra-danielle_2.jpeg";
+import draAsset1 from "@/assets/dra-danielle.jpeg.asset.json";
+import draAsset2 from "@/assets/dra-danielle_1.jpeg.asset.json";
+import draAsset3 from "@/assets/dra-danielle_2.jpeg.asset.json";
 import blogEscovacao from "@/assets/blog-escovacao.jpg";
 import blogEscova from "@/assets/blog-escova.jpg";
 import blogImplante from "@/assets/blog-implante.jpg";
@@ -43,6 +43,9 @@ import ad1 from "@/assets/antes-depois-1.jpg";
 import ad2 from "@/assets/antes-depois-2.jpg";
 import ad3 from "@/assets/antes-depois-3.jpg";
 import ad4 from "@/assets/antes-depois-4.jpg";
+const draFoto1 = draAsset1.url;
+const draFoto2 = draAsset2.url;
+const draFoto3 = draAsset3.url;
 
 function SectionTitle({
   eyebrow,
