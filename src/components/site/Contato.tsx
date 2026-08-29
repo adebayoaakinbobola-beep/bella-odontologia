@@ -193,7 +193,7 @@ export function Agendamento() {
           </div>
           <button
             type="submit"
-            className="mt-7 w-full rounded-full bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
+            className="mt-7 w-full rounded-2xl bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-hover"
           >
             Agendar Consulta
           </button>
