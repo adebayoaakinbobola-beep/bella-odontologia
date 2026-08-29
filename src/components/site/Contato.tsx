@@ -208,11 +208,11 @@ export function Agendamento() {
 
 export function Localizacao() {
   return (
-    <section id="contato" className="bg-cream py-24">
+    <section id="contato" className="bg-cream py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
-            <p className="text-xs tracking-[0.28em] text-primary/70 uppercase">Localização</p>
+            <p className="text-xs font-semibold tracking-[0.28em] text-teal uppercase">Localização</p>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl">Venha nos visitar</h2>
             <ul className="mt-8 space-y-5">
               {[
