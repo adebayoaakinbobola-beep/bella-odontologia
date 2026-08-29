@@ -1,29 +1,28 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import {
   Sparkles,
-  Smile,
-  Layers,
   Anchor,
   AlignCenter,
-  Wand2,
-  ShieldCheck,
+  Layers,
   Syringe,
-  Baby,
-  HeartPulse,
-  Gem,
-  Stethoscope,
-  Siren,
   Brush,
   Star,
-  Clock,
-  Award,
-  Users,
   ChevronLeft,
   ChevronRight,
   ArrowRight,
   Check,
+  Cpu,
+  UserRoundCheck,
+  GraduationCap,
+  Sofa,
+  ShieldCheck,
+  Plus,
+  Minus,
+  BadgeCheck,
+  CalendarCheck,
+  MessageCircle,
 } from "lucide-react";
-import { Reveal, useCountUp } from "./Reveal";
+import { Reveal } from "./Reveal";
 import { CLINIC, whatsappLink } from "@/lib/clinic";
 import estruturaImg from "@/assets/estrutura-clinica.jpg";
 import sorrisoImg from "@/assets/sorriso-new.jpg";
@@ -36,40 +35,36 @@ import blogEscovacao from "@/assets/blog-escovacao.jpg";
 import blogEscova from "@/assets/blog-escova.jpg";
 import blogImplante from "@/assets/blog-implante.jpg";
 import blogClareamento from "@/assets/blog-clareamento.jpg";
-import ad1 from "@/assets/antes-depois-1.jpg";
-import ad2 from "@/assets/antes-depois-2.jpg";
-import ad3 from "@/assets/antes-depois-3.jpg";
-import ad4 from "@/assets/antes-depois-4.jpg";
 import draFoto1 from "@/assets/dra-danielle.jpeg";
-import draFoto2 from "@/assets/dra-danielle-1.jpeg";
-import draFoto3 from "@/assets/dra-danielle-2.jpeg";
 
 function SectionTitle({
   eyebrow,
   title,
   description,
   light = false,
+  align = "center",
 }: {
   eyebrow: string;
   title: string;
   description?: string;
   light?: boolean;
+  align?: "center" | "left";
 }) {
   return (
-    <div className="mx-auto max-w-2xl text-center">
+    <div className={align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
       <p
-        className={`text-xs tracking-[0.28em] uppercase ${light ? "text-gold" : "text-primary/70"}`}
+        className={`text-xs font-semibold tracking-[0.28em] uppercase ${light ? "text-gold" : "text-teal"}`}
       >
         {eyebrow}
       </p>
       <h2
-        className={`mt-4 font-display text-3xl sm:text-4xl ${light ? "text-primary-foreground" : "text-foreground"}`}
+        className={`mt-4 font-display text-3xl leading-tight sm:text-[2.6rem] ${light ? "text-primary-foreground" : "text-foreground"}`}
       >
         {title}
       </h2>
       {description && (
         <p
-          className={`mt-4 text-base leading-relaxed ${light ? "text-primary-foreground/80" : "text-muted-foreground"}`}
+          className={`mt-4 text-base leading-relaxed ${light ? "text-primary-foreground/75" : "text-muted-foreground"}`}
         >
           {description}
         </p>
@@ -78,74 +73,101 @@ function SectionTitle({
   );
 }
 
-export function Sobre() {
+/* ---------------------------------- Prova social --------------------------------- */
+
+export function ProvaSocial() {
+  const itens = [
+    { destaque: `${CLINIC.rating.toFixed(1)}`, label: `Avaliação no Google · ${CLINIC.reviews} avaliações` },
+    { destaque: "CRO-PR 22533", label: "Clínica com responsável técnica registrada" },
+    { destaque: "12x", label: "Parcelamento disponível" },
+    { destaque: "Seg–Sáb", label: "Atendimento de segunda a sábado" },
+  ];
   return (
-    <section id="sobre" className="bg-background py-24">
-      <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:px-8">
+    <section className="border-y border-border bg-background">
+      <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border lg:px-8">
+        {itens.map((i) => (
+          <div key={i.destaque} className="lg:px-8 lg:first:pl-0 lg:last:pr-0">
+            <p className="font-display text-2xl text-primary">{i.destaque}</p>
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{i.label}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* -------------------------------------- Sobre ------------------------------------- */
+
+export function Sobre() {
+  const beneficios = [
+    { icon: ShieldCheck, t: "Biossegurança rigorosa", d: "Protocolos rígidos de esterilização em cada atendimento." },
+    { icon: Cpu, t: "Diagnóstico preciso", d: "Equipamentos modernos para planejar cada caso com previsibilidade." },
+    { icon: UserRoundCheck, t: "Cuidado humanizado", d: "Escuta atenta e plano de tratamento explicado com clareza." },
+  ];
+  return (
+    <section id="sobre" className="bg-background py-20 lg:py-28">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-[1.05fr_1fr] lg:gap-20 lg:px-8">
         <Reveal>
           <div className="relative">
             <img
               src={estruturaImg}
-              alt="Estrutura moderna do consultório da Clínica Bella Odontologia"
+              alt="Estrutura moderna do consultório da Bella Odontologia em Francisco Beltrão"
               width={1200}
               height={900}
               loading="lazy"
-              className="w-full rounded-3xl object-cover shadow-soft"
+              className="w-full rounded-[28px] object-cover shadow-soft"
             />
-            <div className="absolute -bottom-8 left-6 hidden rounded-2xl bg-primary px-7 py-6 text-primary-foreground shadow-soft sm:block">
-              <p className="font-display text-3xl">+15</p>
-              <p className="text-xs tracking-[0.18em] uppercase">anos de experiência</p>
+            <div className="absolute -bottom-6 right-6 hidden rounded-2xl bg-primary px-6 py-5 text-primary-foreground shadow-soft sm:block">
+              <p className="font-display text-xl">Bella Odontologia</p>
+              <p className="mt-1 text-xs tracking-[0.18em] uppercase text-primary-foreground/70">
+                Francisco Beltrão · PR
+              </p>
             </div>
           </div>
         </Reveal>
 
         <Reveal delay={120}>
-          <p className="text-xs tracking-[0.28em] text-primary/70 uppercase">A Clínica</p>
-          <h2 className="mt-4 font-display text-3xl sm:text-4xl">
-            Odontologia de excelência em Francisco Beltrão
-          </h2>
-          <p className="mt-5 leading-relaxed text-muted-foreground">
-            A Clínica Bella Odontologia nasceu do compromisso de unir precisão clínica e acolhimento
-            humano. Cada paciente é recebido em um ambiente pensado para o conforto, com protocolos
-            rigorosos de biossegurança e tecnologia digital que torna diagnósticos mais precisos e
-            tratamentos mais previsíveis.
-          </p>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            {[
-              {
-                t: "Nossa Missão",
-                d: "Oferecer odontologia de alta qualidade, aliando conhecimento técnico a um atendimento acolhedor e personalizado.",
-              },
-              {
-                t: "Profissionalismo",
-                d: "Corpo clínico altamente capacitado e em constante atualização com as melhores práticas da odontologia moderna.",
-              },
-              {
-                t: "Tecnologia",
-                d: "Utilizamos equipamentos de ponta para garantir diagnósticos precisos e tratamentos mais eficientes e confortáveis.",
-              },
-              {
-                t: "Bem-estar",
-                d: "Um ambiente planejado para que sua experiência no dentista seja positiva, tranquila e segura.",
-              },
-            ].map((i) => (
-              <div key={i.t}>
-                <h3 className="font-display text-lg">{i.t}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{i.d}</p>
-              </div>
-            ))}
+          <div>
+            <p className="text-xs font-semibold tracking-[0.28em] text-teal uppercase">
+              Sobre a Bella Odontologia
+            </p>
+            <h2 className="mt-4 font-display text-3xl leading-tight sm:text-[2.6rem]">
+              Odontologia de excelência, com acolhimento em cada detalhe
+            </h2>
+            <p className="mt-5 leading-relaxed text-muted-foreground">
+              Unimos precisão clínica, tecnologia e escuta atenta para que cada paciente receba um
+              plano de tratamento realmente personalizado — do check-up preventivo à alta estética.
+            </p>
+
+            <div className="mt-9 space-y-6">
+              {beneficios.map((b) => (
+                <div key={b.t} className="flex gap-4">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-teal/10">
+                    <b.icon className="h-5 w-5 text-teal" aria-hidden />
+                  </span>
+                  <div className="min-w-0">
+                    <h3 className="font-display text-lg">{b.t}</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{b.d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <a
+              href="#contato"
+              className="group mt-9 inline-flex items-center gap-2 text-sm font-semibold text-primary"
+            >
+              Conheça nossa clínica
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden />
+            </a>
           </div>
-          <a
-            href="#agendamento"
-            className="mt-9 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105"
-          >
-            Solicite uma avaliação <ArrowRight className="h-4 w-4" aria-hidden />
-          </a>
         </Reveal>
       </div>
     </section>
   );
 }
+
+/* ----------------------------------- Tratamentos ---------------------------------- */
 
 const tratamentos = [
   {
@@ -168,14 +190,14 @@ const tratamentos = [
   },
   {
     icon: AlignCenter,
-    nome: "Ortodontia",
-    desc: "Aparelhos fixos e alinhadores invisíveis para correção do posicionamento dental.",
+    nome: "Ortodontia e Alinhadores",
+    desc: "Aparelhos fixos e alinhadores transparentes para corrigir o posicionamento dental.",
     img: tratOrto,
   },
   {
     icon: Brush,
     nome: "Odontologia Preventiva",
-    desc: "Check-up preventivo, limpeza profissional e orientações para manter a saúde bucal.",
+    desc: "Check-up, limpeza profissional e orientação para manter a saúde bucal em dia.",
     img: tratGeral,
   },
   {
@@ -184,50 +206,22 @@ const tratamentos = [
     desc: "Tratamento de canal com técnicas avançadas para alívio da dor e preservação do dente.",
     img: tratCanal,
   },
-  {
-    icon: HeartPulse,
-    nome: "Periodontia",
-    desc: "Cuidados com a saúde da gengiva e tecidos de sustentação dos dentes.",
-    img: tratGeral,
-  },
-  {
-    icon: Smile,
-    nome: "Odontologia Estética",
-    desc: "Procedimentos restauradores e cosméticos para harmonizar o seu sorriso.",
-    img: sorrisoImg,
-  },
-  {
-    icon: Gem,
-    nome: "Prótese Dentária",
-    desc: "Soluções fixas ou removíveis para reposição de dentes com naturalidade.",
-    img: tratImplante,
-  },
-  {
-    icon: Wand2,
-    nome: "Odontopediatria",
-    desc: "Atendimento especializado e humanizado para bebês, crianças e adolescentes.",
-    img: tratOrto,
-  },
-  {
-    icon: Stethoscope,
-    nome: "Cirurgia Oral",
-    desc: "Procedimentos cirúrgicos de pequeno porte, incluindo extração de sisos.",
-    img: tratImplante,
-  },
-  {
-    icon: Siren,
-    nome: "Urgências",
-    desc: "Atendimento imediato para alívio de dor e situações emergenciais.",
-    img: tratGeral,
-  },
+];
+
+const outros = [
+  "Periodontia",
+  "Odontologia Estética",
+  "Prótese Dentária",
+  "Odontopediatria",
+  "Cirurgia Oral",
+  "Urgências Odontológicas",
 ];
 
 export function Tratamentos() {
   const [expanded, setExpanded] = useState(false);
-  const visiveis = expanded ? tratamentos : tratamentos.slice(0, 6);
 
   return (
-    <section id="tratamentos" className="bg-cream py-24">
+    <section id="tratamentos" className="bg-cream py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionTitle
           eyebrow="Nossos Tratamentos"
@@ -235,49 +229,69 @@ export function Tratamentos() {
           description="Da prevenção à alta estética, todos os procedimentos são realizados com protocolos atualizados e materiais premium."
         />
 
-        <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-          {visiveis.map((t, i) => (
+        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {tratamentos.map((t, i) => (
             <Reveal key={t.nome} delay={(i % 3) * 90}>
-              <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-card transition-transform duration-300 hover:-translate-y-1.5">
-                <div className="relative h-44 overflow-hidden">
+              <a
+                href={whatsappLink(`Olá! Quero saber mais sobre ${t.nome}.`)}
+                target="_blank"
+                rel="noopener"
+                className="group flex h-full flex-col overflow-hidden rounded-3xl bg-card shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-hover"
+              >
+                <div className="relative h-52 overflow-hidden">
                   <img
                     src={t.img}
-                    alt={t.nome}
+                    alt={`${t.nome} na Bella Odontologia`}
                     width={800}
                     height={600}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                   />
-                  <span className="absolute bottom-3 left-3 grid h-11 w-11 place-items-center rounded-full bg-primary text-primary-foreground">
+                  <span className="absolute bottom-3 left-3 grid h-11 w-11 place-items-center rounded-xl bg-background/90 text-primary backdrop-blur">
                     <t.icon className="h-5 w-5" aria-hidden />
                   </span>
                 </div>
-                <div className="flex flex-1 flex-col p-6">
+                <div className="flex flex-1 flex-col p-7">
                   <h3 className="font-display text-xl">{t.nome}</h3>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                     {t.desc}
                   </p>
-                  <a
-                    href={whatsappLink(`Olá! Quero saber mais sobre ${t.nome}.`)}
-                    target="_blank"
-                    rel="noopener"
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary"
-                  >
-                    Saiba mais <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
-                  </a>
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                    Saiba mais
+                    <ArrowRight
+                      className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                      aria-hidden
+                    />
+                  </span>
                 </div>
-              </article>
+              </a>
             </Reveal>
           ))}
         </div>
+
+        {expanded && (
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            {outros.map((o) => (
+              <a
+                key={o}
+                href={whatsappLink(`Olá! Quero saber mais sobre ${o}.`)}
+                target="_blank"
+                rel="noopener"
+                className="rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-teal hover:text-teal"
+              >
+                {o}
+              </a>
+            ))}
+          </div>
+        )}
 
         {!expanded && (
           <div className="mt-12 text-center">
             <button
               onClick={() => setExpanded(true)}
-              className="rounded-full border border-primary px-7 py-3.5 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+              className="rounded-2xl border border-primary px-8 py-4 text-sm font-semibold text-primary transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary hover:text-primary-foreground"
             >
-              Ver todos os tratamentos
+              Conhecer todos os tratamentos
             </button>
           </div>
         )}
@@ -286,47 +300,63 @@ export function Tratamentos() {
   );
 }
 
+/* ------------------------------------- Por quê ------------------------------------ */
+
 const diferenciais = [
-  "Atendimento personalizado",
-  "Equipamentos de última geração",
-  "Ambiente confortável",
-  "Dentistas especializados",
-  "Tratamentos modernos",
-  "Agendamento rápido",
-  "Excelentes avaliações",
-  "Atendimento humanizado",
+  {
+    icon: Cpu,
+    t: "Tecnologia avançada",
+    d: "Equipamentos modernos para diagnósticos e tratamentos precisos.",
+  },
+  {
+    icon: UserRoundCheck,
+    t: "Atendimento personalizado",
+    d: "Cada paciente recebe um plano de tratamento individualizado.",
+  },
+  {
+    icon: GraduationCap,
+    t: "Profissionais qualificados",
+    d: "Atendimento realizado por profissionais especializados.",
+  },
+  {
+    icon: Sofa,
+    t: "Ambiente confortável",
+    d: "Uma experiência odontológica tranquila, moderna e acolhedora.",
+  },
 ];
 
 export function PorQue() {
   return (
-    <section className="gradient-hero py-24">
+    <section className="gradient-hero py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionTitle
           light
           eyebrow="Diferenciais"
-          title="Por que escolher a Bella Odontologia?"
-          description="Mais de 8.000 pacientes confiaram seu sorriso a quem trata cada detalhe com precisão e cuidado."
+          title="Excelência em cada detalhe do seu tratamento."
         />
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2">
           {diferenciais.map((d, i) => (
-            <Reveal key={d} delay={(i % 4) * 80}>
-              <div className="h-full rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-6 backdrop-blur transition-colors hover:bg-primary-foreground/10">
-                <span className="grid h-10 w-10 place-items-center rounded-full bg-gold/20">
-                  <Check className="h-5 w-5 text-gold" aria-hidden />
+            <Reveal key={d.t} delay={(i % 2) * 90}>
+              <div className="flex gap-5">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-primary-foreground/8 ring-1 ring-gold/40">
+                  <d.icon className="h-5 w-5 text-gold" aria-hidden />
                 </span>
-                <h3 className="mt-4 font-display text-lg text-primary-foreground">{d}</h3>
+                <div className="min-w-0">
+                  <h3 className="font-display text-xl text-primary-foreground">{d.t}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-primary-foreground/75">{d.d}</p>
+                </div>
               </div>
             </Reveal>
           ))}
         </div>
-        <div className="mt-14 text-center">
+        <div className="mt-16 text-center">
           <a
             href={whatsappLink("Olá! Quero falar com um especialista.")}
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center gap-2 rounded-full bg-background px-8 py-4 text-sm font-semibold text-primary shadow-soft transition-transform hover:scale-105"
+            className="inline-flex items-center gap-2 rounded-2xl bg-background px-8 py-4 text-sm font-semibold text-primary shadow-soft transition-transform duration-200 hover:-translate-y-0.5"
           >
-            Fale com um especialista
+            <MessageCircle className="h-4 w-4" aria-hidden /> Fale com um especialista
           </a>
         </div>
       </div>
@@ -334,151 +364,110 @@ export function PorQue() {
   );
 }
 
+/* ---------------------------------- Como funciona --------------------------------- */
+
 const etapas = [
-  { t: "Agende sua Consulta", d: "Entre em contato pelo WhatsApp ou telefone para escolher o melhor horário." },
-  { t: "Avaliação Detalhada", d: "Na primeira consulta, realizamos um exame minucioso para entender suas necessidades." },
-  { t: "Plano de Tratamento", d: "Apresentamos as melhores opções, explicadas com clareza e transparência." },
-  { t: "Seu Novo Sorriso", d: "Execução do tratamento com foco total no seu conforto e em resultados duradouros." },
+  { n: "01", t: "Agende sua avaliação", d: "Fale com a recepção pelo WhatsApp ou telefone e escolha o melhor horário." },
+  { n: "02", t: "Avaliação completa", d: "Exame clínico detalhado para entender suas necessidades e objetivos." },
+  { n: "03", t: "Plano personalizado", d: "Apresentamos o tratamento indicado, etapas, prazos e condições de pagamento." },
+  { n: "04", t: "Transforme seu sorriso", d: "Tratamento conduzido com acompanhamento próximo e manutenção preventiva." },
 ];
 
 export function ComoFunciona() {
   return (
-    <section className="bg-background py-24">
+    <section className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionTitle
-          eyebrow="Como Funciona"
+          eyebrow="Como funciona"
           title="Um caminho simples até o seu novo sorriso"
         />
-        <ol className="relative mt-14 space-y-8 border-l border-border pl-8 sm:mx-auto sm:max-w-3xl">
-          {etapas.map((e, i) => (
-            <Reveal key={e.t} delay={i * 70}>
-              <li className="relative">
-                <span className="absolute top-1 -left-[2.6rem] grid h-8 w-8 place-items-center rounded-full bg-primary font-display text-sm text-primary-foreground">
-                  {i + 1}
-                </span>
-                <h3 className="font-display text-xl">{e.t}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{e.d}</p>
-              </li>
-            </Reveal>
-          ))}
-        </ol>
+        <div className="relative mt-16">
+          <div
+            aria-hidden
+            className="absolute top-6 right-0 left-0 hidden h-px bg-border lg:block"
+          />
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+            {etapas.map((e, i) => (
+              <Reveal key={e.n} delay={i * 100}>
+                <div className="relative">
+                  <span className="relative z-10 grid h-12 w-12 place-items-center rounded-2xl bg-primary font-display text-base text-primary-foreground">
+                    {e.n}
+                  </span>
+                  <h3 className="mt-6 font-display text-xl">{e.t}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{e.d}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
 }
 
-const equipe = [
-  {
-    nome: "Dra. Danielle C. Lourenço",
-    esp: "Cirurgiã-Dentista",
-    reg: "CRO-PR 22533",
-    bio: "Responsável Técnica e especialista dedicada a oferecer tratamentos odontológicos com excelência, ética e um olhar humanizado para cada sorriso.",
-    foto: draFoto1,
-  },
-  {
-    nome: "Dra. Danielle C. Lourenço",
-    esp: "Clínica Geral e Estética",
-    reg: "CRO-PR 22533",
-    bio: "Focada em reabilitação oral e estética, unindo tecnologia e sensibilidade para transformar a vida dos pacientes através da saúde bucal.",
-    foto: draFoto2,
-  },
-  {
-    nome: "Dra. Danielle C. Lourenço",
-    esp: "Prevenção e Diagnóstico",
-    reg: "CRO-PR 22533",
-    bio: "Especialista em diagnósticos precisos e protocolos preventivos, garantindo a manutenção da saúde e longevidade dos tratamentos realizados.",
-    foto: draFoto3,
-  },
+/* -------------------------------------- Equipe ------------------------------------ */
+
+const especialidades = [
+  "Clínica Geral",
+  "Odontologia Estética",
+  "Prevenção e Diagnóstico",
+  "Reabilitação Oral",
 ];
 
 export function Equipe() {
   return (
-    <section id="equipe" className="bg-cream py-24">
+    <section id="equipe" className="bg-cream py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionTitle
-          eyebrow="Conheça Nossa Equipe"
-          title="Profissionais que cuidam de você"
-          description="Formação sólida, atualização constante e o compromisso de tratar cada paciente como único."
+          eyebrow="Responsável Técnica"
+          title="Quem cuida do seu sorriso"
         />
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {equipe.map((p, i) => (
-            <Reveal key={p.esp} delay={i * 100}>
-              <article className="h-full overflow-hidden rounded-3xl bg-card shadow-card">
-                <div className="flex h-[450px] w-full items-center justify-center bg-muted">
-                  <img
-                    src={p.foto}
-                    alt={`${p.nome}, ${p.esp}`}
-                    loading="lazy"
-                    className="h-full w-full object-cover object-top"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="font-display text-xl">{p.nome}</h3>
-                  <p className="mt-1 text-sm font-medium text-primary">{p.esp}</p>
-                  <p className="mt-1 text-xs tracking-[0.18em] text-muted-foreground uppercase">
-                    {p.reg}
-                  </p>
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.bio}</p>
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal>
+          <div className="mt-14 grid items-center gap-10 rounded-[28px] bg-card p-6 shadow-soft lg:grid-cols-[0.85fr_1fr] lg:gap-16 lg:p-10">
+            <div className="overflow-hidden rounded-3xl bg-muted">
+              <img
+                src={draFoto1}
+                alt="Dra. Danielle C. Lourenço, cirurgiã-dentista da Bella Odontologia"
+                loading="lazy"
+                className="h-[420px] w-full object-cover object-top sm:h-[520px]"
+              />
+            </div>
+            <div>
+              <h3 className="font-display text-3xl sm:text-4xl">Dra. Danielle C. Lourenço</h3>
+              <p className="mt-2 text-base font-medium text-teal">Cirurgiã-Dentista</p>
+              <p className="mt-1 inline-flex items-center gap-2 text-xs tracking-[0.18em] text-muted-foreground uppercase">
+                <BadgeCheck className="h-4 w-4 text-gold" aria-hidden /> CRO-PR 22533
+              </p>
+              <p className="mt-6 leading-relaxed text-muted-foreground">
+                Responsável técnica da Bella Odontologia, dedica-se a oferecer tratamentos com
+                excelência técnica, ética e um olhar humanizado. Cada plano é construído junto com o
+                paciente, unindo diagnóstico preciso, conforto e resultados naturais e duradouros.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                {especialidades.map((e) => (
+                  <span
+                    key={e}
+                    className="rounded-xl bg-secondary px-4 py-2 text-sm font-medium text-secondary-foreground"
+                  >
+                    {e}
+                  </span>
+                ))}
+              </div>
+              <a
+                href="#agendamento"
+                className="mt-9 inline-flex items-center gap-2 rounded-2xl bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-hover"
+              >
+                <CalendarCheck className="h-4 w-4" aria-hidden /> Agendar com a Dra. Danielle
+              </a>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
 }
 
-const categorias = ["Clareamento", "Lentes e Facetas", "Implantes", "Ortodontia"] as const;
-
-export function AntesDepois() {
-  const [cat, setCat] = useState<(typeof categorias)[number]>("Clareamento");
-  const imgs = [ad1, ad2, ad3, ad4];
-
-  return (
-    <section id="resultados" className="bg-background py-24">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <SectionTitle
-          eyebrow="Antes e Depois"
-          title="Resultados reais, sorrisos transformados"
-          description="Casos conduzidos na clínica. Cada tratamento é planejado individualmente — resultados podem variar."
-        />
-        <div className="mt-10 flex flex-wrap justify-center gap-3">
-          {categorias.map((c) => (
-            <button
-              key={c}
-              onClick={() => setCat(c)}
-              className={`rounded-full px-5 py-2.5 text-sm font-medium transition-colors ${
-                cat === c
-                  ? "bg-primary text-primary-foreground"
-                  : "border border-border bg-card text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {imgs.map((src, i) => (
-            <Reveal key={i} delay={i * 80}>
-              <figure className="group overflow-hidden rounded-3xl shadow-card">
-                <img
-                  src={src}
-                  alt={`Resultado de ${cat} na Clínica Bella Odontologia`}
-                  loading="lazy"
-                  className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <figcaption className="bg-card px-5 py-4 text-sm text-muted-foreground">
-                  {cat} · caso {i + 1}
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+/* ----------------------------------- Depoimentos ---------------------------------- */
 
 const depoimentos = [
   {
@@ -489,111 +478,129 @@ const depoimentos = [
   { nome: "Janaina de Oliveira", txt: "Ótimo atendimento, e preço ótimo e justo." },
 ];
 
+function GoogleIcon({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 48 48" aria-hidden focusable="false">
+      <path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.6 30.2.5 24 .5 14.6.5 6.5 5.9 2.6 13.7l7.8 6.1C12.3 13.6 17.6 9.5 24 9.5z" />
+      <path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-2.8-.4-4.1H24v7.5h12.7c-.3 2.1-1.6 5.3-4.7 7.4l7.6 5.9c4.5-4.2 6.9-10.3 6.9-16.7z" />
+      <path fill="#FBBC05" d="M10.4 28.2A14.5 14.5 0 0 1 9.6 24c0-1.5.3-2.9.7-4.2l-7.8-6.1A23.9 23.9 0 0 0 0 24c0 3.9.9 7.5 2.6 10.7l7.8-6.5z" />
+      <path fill="#34A853" d="M24 47.5c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.9c-2 1.4-4.8 2.4-8.3 2.4-6.4 0-11.7-4.1-13.6-9.9l-7.8 6.1C6.5 42.1 14.6 47.5 24 47.5z" />
+    </svg>
+  );
+}
+
 export function Depoimentos() {
   const [i, setI] = useState(0);
-  const atual = depoimentos[i]!;
   return (
-    <section id="depoimentos" className="bg-cream py-24">
-      <div className="mx-auto max-w-4xl px-5 text-center lg:px-8">
-        <SectionTitle eyebrow="Depoimentos" title="O que nossos pacientes dizem" />
-        <div className="mt-6 flex items-center justify-center gap-2">
-          {Array.from({ length: 5 }).map((_, k) => (
-            <Star key={k} className="h-5 w-5 fill-gold text-gold" aria-hidden />
+    <section id="depoimentos" className="bg-background py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-5 lg:px-8">
+        <SectionTitle
+          eyebrow="Avaliações"
+          title="O que nossos pacientes dizem"
+          description={`${CLINIC.rating.toFixed(1)} de 5 no Google · ${CLINIC.reviews} avaliações`}
+        />
+
+        <div className="mt-14 hidden gap-7 lg:grid lg:grid-cols-3">
+          {depoimentos.map((d, k) => (
+            <Reveal key={d.nome} delay={k * 90}>
+              <figure className="flex h-full flex-col rounded-3xl bg-card p-8 shadow-card">
+                <div className="flex items-center gap-1" aria-label="5 de 5 estrelas">
+                  {Array.from({ length: 5 }).map((_, s) => (
+                    <Star key={s} className="h-4 w-4 fill-gold text-gold" aria-hidden />
+                  ))}
+                </div>
+                <blockquote className="mt-5 flex-1 leading-relaxed text-foreground">
+                  “{d.txt}”
+                </blockquote>
+                <figcaption className="mt-7 flex items-center justify-between gap-3 border-t border-border pt-5">
+                  <span className="text-sm font-semibold">{d.nome}</span>
+                  <GoogleIcon className="h-5 w-5" />
+                </figcaption>
+              </figure>
+            </Reveal>
           ))}
-          <span className="ml-2 text-sm text-muted-foreground">
-            {CLINIC.rating.toFixed(1)} de 5 · {CLINIC.reviews} avaliações no Google
-          </span>
         </div>
 
-        <div className="mt-10 rounded-3xl bg-card p-10 shadow-card">
-          <p className="font-display text-xl leading-relaxed text-foreground sm:text-2xl">
-            “{atual.txt}”
-          </p>
-          <p className="mt-6 text-sm font-semibold text-primary">{atual.nome}</p>
-          <div className="mt-8 flex items-center justify-center gap-4">
+        <div className="mt-12 lg:hidden">
+          <figure className="rounded-3xl bg-card p-7 shadow-card">
+            <div className="flex items-center gap-1" aria-label="5 de 5 estrelas">
+              {Array.from({ length: 5 }).map((_, s) => (
+                <Star key={s} className="h-4 w-4 fill-gold text-gold" aria-hidden />
+              ))}
+            </div>
+            <blockquote className="mt-5 leading-relaxed">“{depoimentos[i]!.txt}”</blockquote>
+            <figcaption className="mt-6 flex items-center justify-between gap-3 border-t border-border pt-5">
+              <span className="text-sm font-semibold">{depoimentos[i]!.nome}</span>
+              <GoogleIcon />
+            </figcaption>
+          </figure>
+          <div className="mt-6 flex items-center justify-center gap-4">
             <button
               onClick={() => setI((v) => (v - 1 + depoimentos.length) % depoimentos.length)}
-              aria-label="Depoimento anterior"
-              className="grid h-10 w-10 place-items-center rounded-full border border-border hover:bg-accent"
+              aria-label="Avaliação anterior"
+              className="grid h-11 w-11 place-items-center rounded-xl border border-border hover:bg-accent"
             >
               <ChevronLeft className="h-5 w-5" aria-hidden />
             </button>
             <button
               onClick={() => setI((v) => (v + 1) % depoimentos.length)}
-              aria-label="Próximo depoimento"
-              className="grid h-10 w-10 place-items-center rounded-full border border-border hover:bg-accent"
+              aria-label="Próxima avaliação"
+              className="grid h-11 w-11 place-items-center rounded-xl border border-border hover:bg-accent"
             >
               <ChevronRight className="h-5 w-5" aria-hidden />
             </button>
           </div>
+        </div>
+
+        <div className="mt-12 text-center">
+          <a
+            href={CLINIC.maps}
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-2 rounded-2xl border border-border bg-card px-7 py-4 text-sm font-semibold text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-teal hover:text-teal"
+          >
+            <GoogleIcon className="h-4 w-4" /> Ver avaliações no Google
+          </a>
         </div>
       </div>
     </section>
   );
 }
 
-const numeros = [
-  { icon: Users, valor: 8000, sufixo: "+", label: "pacientes atendidos" },
-  { icon: Clock, valor: 15, sufixo: "+", label: "anos de experiência" },
-  { icon: Award, valor: 98, sufixo: "%", label: "de satisfação" },
-  { icon: Sparkles, valor: 4500, sufixo: "+", label: "procedimentos realizados" },
-];
+/* --------------------------------- CTA de conversão -------------------------------- */
 
-export function Numeros() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [active, setActive] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => {
-        if (e?.isIntersecting) {
-          setActive(true);
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.3 },
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-
+export function CtaFinal() {
   return (
-    <section ref={ref} className="gradient-hero py-20">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
-        {numeros.map((n) => (
-          <Numero key={n.label} {...n} active={active} />
-        ))}
+    <section className="bg-background px-5 py-10 lg:px-8">
+      <div className="gradient-hero mx-auto max-w-7xl rounded-[28px] px-6 py-16 text-center shadow-soft sm:px-12 lg:py-20">
+        <h2 className="mx-auto max-w-2xl font-display text-3xl text-primary-foreground sm:text-[2.7rem] sm:leading-tight">
+          Pronto para cuidar do seu sorriso?
+        </h2>
+        <p className="mx-auto mt-5 max-w-xl leading-relaxed text-primary-foreground/75">
+          Agende sua avaliação e descubra o tratamento ideal para você.
+        </p>
+        <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+          <a
+            href="#agendamento"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-background px-8 py-4 text-sm font-semibold text-primary transition-transform duration-200 hover:-translate-y-0.5"
+          >
+            <CalendarCheck className="h-4 w-4" aria-hidden /> Agendar avaliação
+          </a>
+          <a
+            href={whatsappLink("Olá! Quero agendar uma avaliação.")}
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl border border-primary-foreground/35 px-8 py-4 text-sm font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary-foreground/10"
+          >
+            <MessageCircle className="h-4 w-4" aria-hidden /> Falar no WhatsApp
+          </a>
+        </div>
       </div>
     </section>
   );
 }
 
-function Numero({
-  icon: Icon,
-  valor,
-  sufixo,
-  label,
-  active,
-}: {
-  icon: typeof Users;
-  valor: number;
-  sufixo: string;
-  label: string;
-  active: boolean;
-}) {
-  const v = useCountUp(valor, active);
-  return (
-    <div className="text-center text-primary-foreground">
-      <Icon className="mx-auto h-7 w-7 text-gold" aria-hidden />
-      <p className="mt-4 font-display text-4xl">
-        {v.toLocaleString("pt-BR")}
-        {sufixo}
-      </p>
-      <p className="mt-1 text-sm text-primary-foreground/75">{label}</p>
-    </div>
-  );
-}
+/* --------------------------------------- FAQ -------------------------------------- */
 
 export const faqs = [
   {
@@ -625,85 +632,161 @@ export const faqs = [
 export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="bg-background py-24">
-      <div className="mx-auto max-w-3xl px-5 lg:px-8">
+    <section id="faq" className="bg-background py-20 lg:py-28">
+      <div className="mx-auto max-w-[800px] px-5 lg:px-8">
         <SectionTitle eyebrow="FAQ" title="Perguntas frequentes" />
-        <div className="mt-12 divide-y divide-border rounded-3xl border border-border bg-card">
-          {faqs.map((f, i) => (
-            <div key={f.q}>
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                aria-expanded={open === i}
-                className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
-              >
-                <span className="font-display text-lg">{f.q}</span>
-                <ChevronRight
-                  className={`h-5 w-5 shrink-0 text-primary transition-transform ${open === i ? "rotate-90" : ""}`}
-                  aria-hidden
-                />
-              </button>
-              {open === i && (
-                <p className="px-6 pb-6 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
-              )}
-            </div>
-          ))}
+        <div className="mt-12 divide-y divide-border">
+          {faqs.map((f, i) => {
+            const isOpen = open === i;
+            return (
+              <div key={f.q}>
+                <button
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  aria-expanded={isOpen}
+                  className="flex w-full items-center justify-between gap-5 py-6 text-left"
+                >
+                  <span className="font-display text-lg sm:text-xl">{f.q}</span>
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-secondary text-primary">
+                    {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                  </span>
+                </button>
+                <div
+                  className="grid transition-all duration-300 ease-out"
+                  style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+                >
+                  <div className="overflow-hidden">
+                    <p className="pb-6 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
 
+/* --------------------------------------- Blog ------------------------------------- */
+
 const posts = [
   {
     t: "Como cuidar dos dentes no dia a dia",
-    d: "Escovação, fio dental e alimentação: o trio que evita 90% dos problemas bucais.",
+    d: "Escovação, fio dental e alimentação: o trio que evita a maior parte dos problemas bucais e mantém o sorriso saudável por muito mais tempo.",
+    cat: "Prevenção",
+    data: "Guia completo",
     img: blogEscovacao,
   },
   {
     t: "Quando trocar a escova de dentes?",
-    d: "A cada 3 meses ou antes, se as cerdas estiverem abertas. Entenda o porquê.",
+    d: "A cada 3 meses ou antes, se as cerdas estiverem abertas.",
+    cat: "Higiene",
+    data: "Leitura de 3 min",
     img: blogEscova,
   },
   {
     t: "Implante dentário vale a pena?",
-    d: "Comparamos implante, ponte e prótese removível em custo, conforto e durabilidade.",
+    d: "Comparamos implante, ponte e prótese em custo e durabilidade.",
+    cat: "Implantes",
+    data: "Leitura de 5 min",
     img: blogImplante,
   },
   {
     t: "Mitos e verdades sobre clareamento",
-    d: "Clareamento enfraquece o dente? Respondemos as dúvidas mais comuns.",
+    d: "Clareamento enfraquece o dente? Respondemos as dúvidas comuns.",
+    cat: "Estética",
+    data: "Leitura de 4 min",
     img: blogClareamento,
   },
 ];
 
 export function Blog() {
+  const [destaque, ...restantes] = posts;
   return (
-    <section id="blog" className="bg-cream py-24">
+    <section id="blog" className="bg-cream py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionTitle
           eyebrow="Blog"
           title="Conteúdo sobre saúde bucal"
           description="Informação confiável, escrita por quem cuida de sorrisos todos os dias."
         />
-        <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
-          {posts.map((p, i) => (
-            <Reveal key={p.t} delay={i * 80}>
-              <article className="group h-full overflow-hidden rounded-3xl bg-card shadow-card">
-                <img
-                  src={p.img}
-                  alt={p.t}
-                  loading="lazy"
-                  className="h-40 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="p-6">
-                  <h3 className="font-display text-lg leading-snug">{p.t}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.d}</p>
-                </div>
-              </article>
-            </Reveal>
-          ))}
+
+        <div className="mt-14 grid gap-8 lg:grid-cols-2">
+          <Reveal>
+            <article className="group h-full overflow-hidden rounded-3xl bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-hover">
+              <img
+                src={destaque!.img}
+                alt={destaque!.t}
+                loading="lazy"
+                className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-[1.04] sm:h-80"
+              />
+              <div className="p-8">
+                <p className="text-xs font-semibold tracking-[0.2em] text-teal uppercase">
+                  {destaque!.cat} · {destaque!.data}
+                </p>
+                <h3 className="mt-4 font-display text-2xl leading-snug sm:text-3xl">
+                  {destaque!.t}
+                </h3>
+                <p className="mt-3 leading-relaxed text-muted-foreground">{destaque!.d}</p>
+                <a
+                  href={whatsappLink(`Olá! Quero saber mais sobre: ${destaque!.t}`)}
+                  target="_blank"
+                  rel="noopener"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary"
+                >
+                  Ler artigo
+                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden />
+                </a>
+              </div>
+            </article>
+          </Reveal>
+
+          <div className="grid gap-6">
+            {restantes.map((p, i) => (
+              <Reveal key={p.t} delay={i * 90}>
+                <article className="group grid grid-cols-[110px_minmax(0,1fr)] items-center gap-5 overflow-hidden rounded-3xl bg-card p-4 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-hover sm:grid-cols-[160px_minmax(0,1fr)]">
+                  <img
+                    src={p.img}
+                    alt={p.t}
+                    loading="lazy"
+                    className="h-28 w-full rounded-2xl object-cover sm:h-32"
+                  />
+                  <div className="min-w-0">
+                    <p className="text-[11px] font-semibold tracking-[0.2em] text-teal uppercase">
+                      {p.cat}
+                    </p>
+                    <h3 className="mt-2 font-display text-lg leading-snug">{p.t}</h3>
+                    <p className="mt-1 hidden text-sm leading-relaxed text-muted-foreground sm:block">
+                      {p.d}
+                    </p>
+                    <a
+                      href={whatsappLink(`Olá! Quero saber mais sobre: ${p.t}`)}
+                      target="_blank"
+                      rel="noopener"
+                      className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary"
+                    >
+                      Ler artigo
+                      <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden />
+                    </a>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
+/* -------------------------- Compat: seção antiga (não usada) ----------------------- */
+
+export function Numeros() {
+  return null;
+}
+
+export function AntesDepois() {
+  return null;
+}
+
+export { Check };
