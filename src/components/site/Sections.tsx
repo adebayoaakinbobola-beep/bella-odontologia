@@ -676,6 +676,12 @@ const posts = [
     cat: "Perguntas frequentes",
     data: "Guia completo",
     img: blogEscovacao,
+    conteudo: [
+      "O medo de sentir dor é uma das principais razões que fazem as pessoas adiarem a ida ao dentista. A boa notícia é que a odontologia moderna tem como prioridade o conforto do paciente, e a grande maioria dos procedimentos é realizada de forma indolor.",
+      "Na Bella Odontologia, iniciamos cada atendimento com uma conversa clara sobre o que será feito. Em seguida, usamos anestesia tópica — um gel adormecedor — antes de qualquer injeção, reduzindo drasticamente a sensibilidade na região. As técnicas minimamente invasivas também ajudam: quanto mais preciso o tratamento, menor o trauma aos tecidos e, consequentemente, o desconforto pós-operatório.",
+      "Procedimentos como limpeza, clareamento, restaurações e até tratamentos de canal são feitos com anestesia eficaz e equipamentos modernos. Para tratamentos cirúrgicos, seguimos protocolos rigorosos de biossegurança e oferecemos orientações detalhadas para uma recuperação tranquila.",
+      "Se você sente ansiedade, conte para a gente. Trabalhamos com paciência, explicamos cada etapa e respeitamos o seu ritmo. Cuidar do sorriso não precisa ser uma experiência estressante.",
+    ],
   },
   {
     t: "A clínica aceita convênio odontológico?",
@@ -683,6 +689,12 @@ const posts = [
     cat: "Perguntas frequentes",
     data: "Leitura de 3 min",
     img: blogEscova,
+    conteudo: [
+      "Sim. A Bella Odontologia atende pacientes com convênio odontológico, facilitando o acesso a tratamentos de rotina e também a procedimentos mais complexos.",
+      "Cada plano de saúde bucal possui regras próprias de cobertura, carências e procedimentos autorizados. Por isso, a melhor forma de confirmar se o seu convênio é aceito e quais tratamentos estão inclusos é enviar uma mensagem pelo WhatsApp com o nome do plano e o número da carteirinha.",
+      "Nossa equipe verifica a cobertura rapidamente e explica, de forma transparente, o que pode ser feito pelo convênio e o que será particular. Assim, você agenda o atendimento já sabendo exatamente o que esperar, sem surpresas na hora do pagamento.",
+      "Não tem convênio? Também oferecemos condições especiais de pagamento e parcelamento em até 12x no cartão de crédito, para que o cuidado com o seu sorriso caiba no seu orçamento.",
+    ],
   },
   {
     t: "Quanto tempo dura um implante dentário?",
@@ -690,6 +702,12 @@ const posts = [
     cat: "Perguntas frequentes",
     data: "Leitura de 5 min",
     img: blogImplante,
+    conteudo: [
+      "O implante dentário é hoje a solução mais completa para substituir dentes perdidos. Quando bem indicado e realizado por um profissional qualificado, pode durar muitos anos — em alguns casos, toda a vida.",
+      "O tratamento acontece em duas fases principais. Na primeira, o implante — uma pequena raiz de titânio — é colocado no osso da mandíbula ou maxila. Esse processo é feito com anestesia local e, na grande maioria dos casos, é indolor. Depois da cirurgia, começa a fase de osseointegração, que leva em média de 3 a 6 meses. Nesse período, o osso se une ao implante, formando uma base sólida e estável.",
+      "Na segunda fase, após a osseointegração, colocamos a coroa protética, que é o dente propriamente dito. Essa coroa é feita sob medida para combinar com a cor, formato e tamanho dos seus dentes naturais, garantindo um sorriso harmonioso.",
+      "A durabilidade do implante depende muito dos cuidados do paciente. Escovação correta, uso de fio dental, visitas periódicas ao dentista e evitar hábitos como fumar são fundamentais para manter o implante saudável por décadas.",
+    ],
   },
   {
     t: "Como funciona o clareamento dental?",
@@ -697,11 +715,133 @@ const posts = [
     cat: "Perguntas frequentes",
     data: "Leitura de 4 min",
     img: blogClareamento,
+    conteudo: [
+      "O clareamento dental é um dos tratamentos estéticos mais procurados, e com razão: um sorriso mais branco aumenta a autoestima e transmite saúde. Na Bella Odontologia, oferecemos opções seguras e supervisionadas por profissional.",
+      "Antes de iniciar, fazemos uma avaliação completa para verificar a saúde bucal. O clareamento só deve ser feito quando não há cáries, gengivite ou sensibilidade ativa. Também é importante que a limpeza profissional esteja em dia, para que o gel clareador atue de forma uniforme.",
+      "O tratamento pode ser feito em consultório, com gel de maior concentração e ativação controlada, ou em casa, com moldeiras personalizadas e gel adequado para uso domiciliar. Em muitos casos, a combinação dos dois métodos traz o melhor resultado.",
+      "Os primeiros resultados costumam aparecer já nas primeiras sessões. A tonalidade final depende da estrutura do dente e do tipo de mancha, mas a melhora é perceptível na maioria dos pacientes. Para manter o resultado, recomendamos evitar alimentos e bebidas pigmentados nos primeiros dias e seguir as orientações de higiene.",
+    ],
   },
 ];
 
+function ArticleCard({
+  post,
+  expanded,
+  onToggle,
+  featured = false,
+}: {
+  post: (typeof posts)[number];
+  expanded: boolean;
+  onToggle: () => void;
+  featured?: boolean;
+}) {
+  if (featured) {
+    return (
+      <article className="group h-full overflow-hidden rounded-3xl bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-hover">
+        <img
+          src={post.img}
+          alt={post.t}
+          loading="lazy"
+          className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-[1.04] sm:h-80"
+        />
+        <div className="p-8">
+          <p className="text-xs font-semibold tracking-[0.2em] text-teal uppercase">
+            {post.cat} · {post.data}
+          </p>
+          <h3 className="mt-4 font-display text-2xl leading-snug sm:text-3xl">{post.t}</h3>
+          <p className="mt-3 leading-relaxed text-muted-foreground">{post.d}</p>
+
+          <div
+            className="grid transition-all duration-300 ease-out"
+            style={{ gridTemplateRows: expanded ? "1fr" : "0fr" }}
+          >
+            <div className="overflow-hidden">
+              <div className="mt-6 space-y-4 border-t border-border pt-6 text-sm leading-relaxed text-muted-foreground">
+                {post.conteudo.map((paragrafo, idx) => (
+                  <p key={idx}>{paragrafo}</p>
+                ))}
+              </div>
+              <a
+                href={whatsappLink(`Olá! Quero saber mais sobre: ${post.t}`)}
+                target="_blank"
+                rel="noopener"
+                className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5"
+              >
+                Falar com um especialista
+              </a>
+            </div>
+          </div>
+
+          <button
+            onClick={onToggle}
+            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary"
+          >
+            {expanded ? "Ocultar artigo" : "Ler artigo completo"}
+            <ArrowRight
+              className={`h-4 w-4 transition-transform duration-200 ${expanded ? "rotate-90" : "group-hover:translate-x-1"}`}
+              aria-hidden
+            />
+          </button>
+        </div>
+      </article>
+    );
+  }
+
+  return (
+    <article className="group grid grid-cols-[110px_minmax(0,1fr)] items-start gap-5 overflow-hidden rounded-3xl bg-card p-4 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-hover sm:grid-cols-[160px_minmax(0,1fr)]">
+      <img
+        src={post.img}
+        alt={post.t}
+        loading="lazy"
+        className="h-28 w-full rounded-2xl object-cover sm:h-32"
+      />
+      <div className="min-w-0">
+        <p className="text-[11px] font-semibold tracking-[0.2em] text-teal uppercase">{post.cat}</p>
+        <h3 className="mt-2 font-display text-lg leading-snug">{post.t}</h3>
+        <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{post.d}</p>
+
+        <div
+          className="grid transition-all duration-300 ease-out"
+          style={{ gridTemplateRows: expanded ? "1fr" : "0fr" }}
+        >
+          <div className="overflow-hidden">
+            <div className="mt-4 space-y-3 border-t border-border pt-4 text-sm leading-relaxed text-muted-foreground">
+              {post.conteudo.map((paragrafo, idx) => (
+                <p key={idx}>{paragrafo}</p>
+              ))}
+            </div>
+            <a
+              href={whatsappLink(`Olá! Quero saber mais sobre: ${post.t}`)}
+              target="_blank"
+              rel="noopener"
+              className="mt-4 inline-flex items-center gap-2 rounded-2xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5"
+            >
+              Falar com um especialista
+            </a>
+          </div>
+        </div>
+
+        <button
+          onClick={onToggle}
+          className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary"
+        >
+          {expanded ? "Ocultar artigo" : "Ler artigo completo"}
+          <ArrowRight
+            className={`h-4 w-4 transition-transform duration-200 ${expanded ? "rotate-90" : "group-hover:translate-x-1"}`}
+            aria-hidden
+          />
+        </button>
+      </div>
+    </article>
+  );
+}
+
 export function Blog() {
   const [destaque, ...restantes] = posts;
+  const [aberto, setAberto] = useState<string | null>(destaque.t);
+
+  const toggle = (titulo: string) => setAberto((atual) => (atual === titulo ? null : titulo));
+
   return (
     <section id="blog" className="bg-cream py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
@@ -713,63 +853,22 @@ export function Blog() {
 
         <div className="mt-14 grid gap-8 lg:grid-cols-2">
           <Reveal>
-            <article className="group h-full overflow-hidden rounded-3xl bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-hover">
-              <img
-                src={destaque!.img}
-                alt={destaque!.t}
-                loading="lazy"
-                className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-[1.04] sm:h-80"
-              />
-              <div className="p-8">
-                <p className="text-xs font-semibold tracking-[0.2em] text-teal uppercase">
-                  {destaque!.cat} · {destaque!.data}
-                </p>
-                <h3 className="mt-4 font-display text-2xl leading-snug sm:text-3xl">
-                  {destaque!.t}
-                </h3>
-                <p className="mt-3 leading-relaxed text-muted-foreground">{destaque!.d}</p>
-                <a
-                  href={whatsappLink(`Olá! Quero saber mais sobre: ${destaque!.t}`)}
-                  target="_blank"
-                  rel="noopener"
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary"
-                >
-                  Ler artigo
-                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden />
-                </a>
-              </div>
-            </article>
+            <ArticleCard
+              post={destaque}
+              featured
+              expanded={aberto === destaque.t}
+              onToggle={() => toggle(destaque.t)}
+            />
           </Reveal>
 
           <div className="grid gap-6">
             {restantes.map((p, i) => (
               <Reveal key={p.t} delay={i * 90}>
-                <article className="group grid grid-cols-[110px_minmax(0,1fr)] items-center gap-5 overflow-hidden rounded-3xl bg-card p-4 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-hover sm:grid-cols-[160px_minmax(0,1fr)]">
-                  <img
-                    src={p.img}
-                    alt={p.t}
-                    loading="lazy"
-                    className="h-28 w-full rounded-2xl object-cover sm:h-32"
-                  />
-                  <div className="min-w-0">
-                    <p className="text-[11px] font-semibold tracking-[0.2em] text-teal uppercase">
-                      {p.cat}
-                    </p>
-                    <h3 className="mt-2 font-display text-lg leading-snug">{p.t}</h3>
-                    <p className="mt-1 hidden text-sm leading-relaxed text-muted-foreground sm:block">
-                      {p.d}
-                    </p>
-                    <a
-                      href={whatsappLink(`Olá! Quero saber mais sobre: ${p.t}`)}
-                      target="_blank"
-                      rel="noopener"
-                      className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary"
-                    >
-                      Ler artigo
-                      <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden />
-                    </a>
-                  </div>
-                </article>
+                <ArticleCard
+                  post={p}
+                  expanded={aberto === p.t}
+                  onToggle={() => toggle(p.t)}
+                />
               </Reveal>
             ))}
           </div>
