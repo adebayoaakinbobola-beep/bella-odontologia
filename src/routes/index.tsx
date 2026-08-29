@@ -2,14 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Header, FloatingActions, ChatWidget } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
 import {
+  ProvaSocial,
   Sobre,
   Tratamentos,
   PorQue,
   ComoFunciona,
   Equipe,
-  AntesDepois,
   Depoimentos,
-  Numeros,
+  CtaFinal,
   FAQ,
   Blog,
   faqs,
@@ -110,13 +110,14 @@ function Index() {
       <Header />
       <main>
         <Hero />
+        <ProvaSocial />
         <Sobre />
         <Tratamentos />
         <PorQue />
         <ComoFunciona />
         <Equipe />
         <Depoimentos />
-        <Numeros />
+        <CtaFinal />
         <FAQ />
         <Blog />
         <Agendamento />

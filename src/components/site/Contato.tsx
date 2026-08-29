@@ -62,10 +62,10 @@ export function Agendamento() {
     "w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary";
 
   return (
-    <section id="agendamento" className="bg-background py-24">
+    <section id="agendamento" className="bg-background py-20 lg:py-28">
       <div className="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-[1fr_1.1fr] lg:px-8">
         <div>
-          <p className="text-xs tracking-[0.28em] text-primary/70 uppercase">Agendamento</p>
+          <p className="text-xs font-semibold tracking-[0.28em] text-teal uppercase">Agendamento</p>
           <h2 className="mt-4 font-display text-3xl sm:text-4xl">
             Agende sua consulta hoje mesmo
           </h2>
@@ -193,7 +193,7 @@ export function Agendamento() {
           </div>
           <button
             type="submit"
-            className="mt-7 w-full rounded-full bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
+            className="mt-7 w-full rounded-2xl bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-hover"
           >
             Agendar Consulta
           </button>
@@ -208,11 +208,11 @@ export function Agendamento() {
 
 export function Localizacao() {
   return (
-    <section id="contato" className="bg-cream py-24">
+    <section id="contato" className="bg-cream py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
-            <p className="text-xs tracking-[0.28em] text-primary/70 uppercase">Localização</p>
+            <p className="text-xs font-semibold tracking-[0.28em] text-teal uppercase">Localização</p>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl">Venha nos visitar</h2>
             <ul className="mt-8 space-y-5">
               {[
@@ -300,7 +300,7 @@ export function Footer() {
               ["#sobre", "Sobre a clínica"],
               ["#tratamentos", "Tratamentos"],
               ["#equipe", "Equipe"],
-              ["#resultados", "Antes e depois"],
+              ["#depoimentos", "Avaliações"],
               ["#blog", "Blog"],
               ["#agendamento", "Agendamento"],
             ].map(([href, label]) => (
