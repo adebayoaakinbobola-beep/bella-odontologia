@@ -62,10 +62,10 @@ export function Agendamento() {
     "w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary";
 
   return (
-    <section id="agendamento" className="bg-background py-24">
+    <section id="agendamento" className="bg-background py-20 lg:py-28">
       <div className="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-[1fr_1.1fr] lg:px-8">
         <div>
-          <p className="text-xs tracking-[0.28em] text-primary/70 uppercase">Agendamento</p>
+          <p className="text-xs font-semibold tracking-[0.28em] text-teal uppercase">Agendamento</p>
           <h2 className="mt-4 font-display text-3xl sm:text-4xl">
             Agende sua consulta hoje mesmo
           </h2>
