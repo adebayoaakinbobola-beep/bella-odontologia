@@ -300,7 +300,7 @@ export function Footer() {
               ["#sobre", "Sobre a clínica"],
               ["#tratamentos", "Tratamentos"],
               ["#equipe", "Equipe"],
-              ["#resultados", "Antes e depois"],
+              ["#depoimentos", "Avaliações"],
               ["#blog", "Blog"],
               ["#agendamento", "Agendamento"],
             ].map(([href, label]) => (
