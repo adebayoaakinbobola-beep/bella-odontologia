@@ -110,13 +110,14 @@ function Index() {
       <Header />
       <main>
         <Hero />
+        <ProvaSocial />
         <Sobre />
         <Tratamentos />
         <PorQue />
         <ComoFunciona />
         <Equipe />
         <Depoimentos />
-        <Numeros />
+        <CtaFinal />
         <FAQ />
         <Blog />
         <Agendamento />
