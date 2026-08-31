@@ -51,24 +51,28 @@ function SectionTitle({
   align?: "center" | "left";
 }) {
   return (
-    <div className={align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
-      <p
-        className={`text-xs font-semibold tracking-[0.28em] uppercase ${light ? "text-gold" : "text-teal"}`}
-      >
-        {eyebrow}
-      </p>
-      <h2
-        className={`mt-4 font-display text-3xl leading-tight sm:text-[2.6rem] ${light ? "text-primary-foreground" : "text-foreground"}`}
-      >
-        {title}
-      </h2>
-      {description && (
-        <p
-          className={`mt-4 text-base leading-relaxed ${light ? "text-primary-foreground/75" : "text-muted-foreground"}`}
+    <div
+      className={
+        align === "center"
+          ? "mx-auto max-w-3xl grid gap-5 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-12"
+          : "grid max-w-4xl gap-5 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-12"
+      }
+    >
+      <p className={`kicker pt-3 lg:w-40 ${light ? "text-gold" : "text-teal"}`}>{eyebrow}</p>
+      <div>
+        <h2
+          className={`font-display text-[2rem] leading-[1.08] sm:text-[2.9rem] ${light ? "text-primary-foreground" : "text-foreground"}`}
         >
-          {description}
-        </p>
-      )}
+          {title}
+        </h2>
+        {description && (
+          <p
+            className={`mt-5 max-w-xl text-[0.95rem] leading-relaxed ${light ? "text-primary-foreground/75" : "text-muted-foreground"}`}
+          >
+            {description}
+          </p>
+        )}
+      </div>
     </div>
   );
 }
@@ -115,9 +119,9 @@ export function Sobre() {
               width={1200}
               height={900}
               loading="lazy"
-              className="w-full rounded-[28px] object-cover shadow-soft"
+              className="w-full rounded-xs object-cover shadow-soft"
             />
-            <div className="absolute -bottom-6 right-6 hidden rounded-2xl bg-primary px-6 py-5 text-primary-foreground shadow-soft sm:block">
+            <div className="absolute -bottom-6 right-6 hidden rounded-xs bg-primary px-6 py-5 text-primary-foreground shadow-soft sm:block">
               <p className="font-display text-xl">Bella Odontologia</p>
               <p className="mt-1 text-xs tracking-[0.18em] uppercase text-primary-foreground/70">
                 Francisco Beltrão · PR
@@ -142,7 +146,7 @@ export function Sobre() {
             <div className="mt-9 space-y-6">
               {beneficios.map((b) => (
                 <div key={b.t} className="flex gap-4">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-teal/10">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xs bg-teal/10">
                     <b.icon className="h-5 w-5 text-teal" aria-hidden />
                   </span>
                   <div className="min-w-0">
@@ -236,7 +240,7 @@ export function Tratamentos() {
                 href={whatsappLink(`Olá! Quero saber mais sobre ${t.nome}.`)}
                 target="_blank"
                 rel="noopener"
-                className="group flex h-full flex-col overflow-hidden rounded-3xl bg-card shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-hover"
+                className="group flex h-full flex-col overflow-hidden rounded-xs bg-card shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-hover"
               >
                 <div className="relative h-52 overflow-hidden">
                   <img
@@ -247,7 +251,7 @@ export function Tratamentos() {
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                   />
-                  <span className="absolute bottom-3 left-3 grid h-11 w-11 place-items-center rounded-xl bg-background/90 text-primary backdrop-blur">
+                  <span className="absolute bottom-3 left-3 grid h-11 w-11 place-items-center rounded-xs bg-background/90 text-primary backdrop-blur">
                     <t.icon className="h-5 w-5" aria-hidden />
                   </span>
                 </div>
@@ -277,7 +281,7 @@ export function Tratamentos() {
                 href={whatsappLink(`Olá! Quero saber mais sobre ${o}.`)}
                 target="_blank"
                 rel="noopener"
-                className="rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-teal hover:text-teal"
+                className="rounded-xs border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-teal hover:text-teal"
               >
                 {o}
               </a>
@@ -289,7 +293,7 @@ export function Tratamentos() {
           <div className="mt-12 text-center">
             <button
               onClick={() => setExpanded(true)}
-              className="rounded-2xl border border-primary px-8 py-4 text-sm font-semibold text-primary transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary hover:text-primary-foreground"
+              className="rounded-xs border border-primary px-8 py-4 text-sm font-semibold text-primary transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary hover:text-primary-foreground"
             >
               Conhecer todos os tratamentos
             </button>
@@ -338,7 +342,7 @@ export function PorQue() {
           {diferenciais.map((d, i) => (
             <Reveal key={d.t} delay={(i % 2) * 90}>
               <div className="flex gap-5">
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-primary-foreground/8 ring-1 ring-gold/40">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xs bg-primary-foreground/8 ring-1 ring-gold/40">
                   <d.icon className="h-5 w-5 text-gold" aria-hidden />
                 </span>
                 <div className="min-w-0">
@@ -354,7 +358,7 @@ export function PorQue() {
             href={whatsappLink("Olá! Quero falar com um especialista.")}
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center gap-2 rounded-2xl bg-background px-8 py-4 text-sm font-semibold text-primary shadow-soft transition-transform duration-200 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 rounded-xs bg-background px-8 py-4 text-sm font-semibold text-primary shadow-soft transition-transform duration-200 hover:-translate-y-0.5"
           >
             <MessageCircle className="h-4 w-4" aria-hidden /> Fale com um especialista
           </a>
@@ -390,7 +394,7 @@ export function ComoFunciona() {
             {etapas.map((e, i) => (
               <Reveal key={e.n} delay={i * 100}>
                 <div className="relative">
-                  <span className="relative z-10 grid h-12 w-12 place-items-center rounded-2xl bg-primary font-display text-base text-primary-foreground">
+                  <span className="relative z-10 grid h-12 w-12 place-items-center rounded-xs bg-primary font-display text-base text-primary-foreground">
                     {e.n}
                   </span>
                   <h3 className="mt-6 font-display text-xl">{e.t}</h3>
@@ -423,8 +427,8 @@ export function Equipe() {
           title="Quem cuida do seu sorriso"
         />
         <Reveal>
-          <div className="mt-14 grid items-center gap-10 rounded-[28px] bg-card p-6 shadow-soft lg:grid-cols-[0.85fr_1fr] lg:gap-16 lg:p-10">
-            <div className="overflow-hidden rounded-3xl bg-muted">
+          <div className="mt-14 grid items-center gap-10 rounded-xs bg-card p-6 shadow-soft lg:grid-cols-[0.85fr_1fr] lg:gap-16 lg:p-10">
+            <div className="overflow-hidden rounded-xs bg-muted">
               <img
                 src={draFoto1}
                 alt="Dra. Danielle C. Lourenço, cirurgiã-dentista da Bella Odontologia"
@@ -447,7 +451,7 @@ export function Equipe() {
                 {especialidades.map((e) => (
                   <span
                     key={e}
-                    className="rounded-xl bg-secondary px-4 py-2 text-sm font-medium text-secondary-foreground"
+                    className="rounded-xs bg-secondary px-4 py-2 text-sm font-medium text-secondary-foreground"
                   >
                     {e}
                   </span>
@@ -455,7 +459,7 @@ export function Equipe() {
               </div>
               <a
                 href="#agendamento"
-                className="mt-9 inline-flex items-center gap-2 rounded-2xl bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-hover"
+                className="mt-9 inline-flex items-center gap-2 rounded-xs bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-hover"
               >
                 <CalendarCheck className="h-4 w-4" aria-hidden /> Agendar com a Dra. Danielle
               </a>
@@ -503,7 +507,7 @@ export function Depoimentos() {
         <div className="mt-14 hidden gap-7 lg:grid lg:grid-cols-3">
           {depoimentos.map((d, k) => (
             <Reveal key={d.nome} delay={k * 90}>
-              <figure className="flex h-full flex-col rounded-3xl bg-card p-8 shadow-card">
+              <figure className="flex h-full flex-col rounded-xs bg-card p-8 shadow-card">
                 <div className="flex items-center gap-1" aria-label="5 de 5 estrelas">
                   {Array.from({ length: 5 }).map((_, s) => (
                     <Star key={s} className="h-4 w-4 fill-gold text-gold" aria-hidden />
@@ -522,7 +526,7 @@ export function Depoimentos() {
         </div>
 
         <div className="mt-12 lg:hidden">
-          <figure className="rounded-3xl bg-card p-7 shadow-card">
+          <figure className="rounded-xs bg-card p-7 shadow-card">
             <div className="flex items-center gap-1" aria-label="5 de 5 estrelas">
               {Array.from({ length: 5 }).map((_, s) => (
                 <Star key={s} className="h-4 w-4 fill-gold text-gold" aria-hidden />
@@ -538,14 +542,14 @@ export function Depoimentos() {
             <button
               onClick={() => setI((v) => (v - 1 + depoimentos.length) % depoimentos.length)}
               aria-label="Avaliação anterior"
-              className="grid h-11 w-11 place-items-center rounded-xl border border-border hover:bg-accent"
+              className="grid h-11 w-11 place-items-center rounded-xs border border-border hover:bg-accent"
             >
               <ChevronLeft className="h-5 w-5" aria-hidden />
             </button>
             <button
               onClick={() => setI((v) => (v + 1) % depoimentos.length)}
               aria-label="Próxima avaliação"
-              className="grid h-11 w-11 place-items-center rounded-xl border border-border hover:bg-accent"
+              className="grid h-11 w-11 place-items-center rounded-xs border border-border hover:bg-accent"
             >
               <ChevronRight className="h-5 w-5" aria-hidden />
             </button>
@@ -557,7 +561,7 @@ export function Depoimentos() {
             href={CLINIC.maps}
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center gap-2 rounded-2xl border border-border bg-card px-7 py-4 text-sm font-semibold text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-teal hover:text-teal"
+            className="inline-flex items-center gap-2 rounded-xs border border-border bg-card px-7 py-4 text-sm font-semibold text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-teal hover:text-teal"
           >
             <GoogleIcon className="h-4 w-4" /> Ver avaliações no Google
           </a>
@@ -572,7 +576,7 @@ export function Depoimentos() {
 export function CtaFinal() {
   return (
     <section className="bg-background px-5 py-10 lg:px-8">
-      <div className="gradient-hero mx-auto max-w-7xl rounded-[28px] px-6 py-16 text-center shadow-soft sm:px-12 lg:py-20">
+      <div className="gradient-hero mx-auto max-w-7xl rounded-xs px-6 py-16 text-center shadow-soft sm:px-12 lg:py-20">
         <h2 className="mx-auto max-w-2xl font-display text-3xl text-primary-foreground sm:text-[2.7rem] sm:leading-tight">
           Pronto para cuidar do seu sorriso?
         </h2>
@@ -582,7 +586,7 @@ export function CtaFinal() {
         <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
           <a
             href="#agendamento"
-            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-background px-8 py-4 text-sm font-semibold text-primary transition-transform duration-200 hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center gap-2 rounded-xs bg-background px-8 py-4 text-sm font-semibold text-primary transition-transform duration-200 hover:-translate-y-0.5"
           >
             <CalendarCheck className="h-4 w-4" aria-hidden /> Agendar avaliação
           </a>
@@ -590,7 +594,7 @@ export function CtaFinal() {
             href={whatsappLink("Olá! Quero agendar uma avaliação.")}
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center justify-center gap-2 rounded-2xl border border-primary-foreground/35 px-8 py-4 text-sm font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary-foreground/10"
+            className="inline-flex items-center justify-center gap-2 rounded-xs border border-primary-foreground/35 px-8 py-4 text-sm font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary-foreground/10"
           >
             <MessageCircle className="h-4 w-4" aria-hidden /> Falar no WhatsApp
           </a>
@@ -646,7 +650,7 @@ export function FAQ() {
                   className="flex w-full items-center justify-between gap-5 py-6 text-left"
                 >
                   <span className="font-display text-lg sm:text-xl">{f.q}</span>
-                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-secondary text-primary">
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xs bg-secondary text-primary">
                     {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                   </span>
                 </button>
@@ -737,7 +741,7 @@ function ArticleCard({
 }) {
   if (featured) {
     return (
-      <article className="group h-full overflow-hidden rounded-3xl bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-hover">
+      <article className="group h-full overflow-hidden rounded-xs bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-hover">
         <img
           src={post.img}
           alt={post.t}
@@ -765,7 +769,7 @@ function ArticleCard({
                 href={whatsappLink(`Olá! Quero saber mais sobre: ${post.t}`)}
                 target="_blank"
                 rel="noopener"
-                className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5"
+                className="mt-6 inline-flex items-center gap-2 rounded-xs bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5"
               >
                 Falar com um especialista
               </a>
@@ -788,12 +792,12 @@ function ArticleCard({
   }
 
   return (
-    <article className="group grid grid-cols-[110px_minmax(0,1fr)] items-start gap-5 overflow-hidden rounded-3xl bg-card p-4 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-hover sm:grid-cols-[160px_minmax(0,1fr)]">
+    <article className="group grid grid-cols-[110px_minmax(0,1fr)] items-start gap-5 overflow-hidden rounded-xs bg-card p-4 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-hover sm:grid-cols-[160px_minmax(0,1fr)]">
       <img
         src={post.img}
         alt={post.t}
         loading="lazy"
-        className="h-28 w-full rounded-2xl object-cover sm:h-32"
+        className="h-28 w-full rounded-xs object-cover sm:h-32"
       />
       <div className="min-w-0">
         <p className="text-[11px] font-semibold tracking-[0.2em] text-teal uppercase">{post.cat}</p>
@@ -814,7 +818,7 @@ function ArticleCard({
               href={whatsappLink(`Olá! Quero saber mais sobre: ${post.t}`)}
               target="_blank"
               rel="noopener"
-              className="mt-4 inline-flex items-center gap-2 rounded-2xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5"
+              className="mt-4 inline-flex items-center gap-2 rounded-xs bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5"
             >
               Falar com um especialista
             </a>
