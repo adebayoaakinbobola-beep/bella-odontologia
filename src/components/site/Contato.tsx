@@ -59,7 +59,7 @@ export function Agendamento() {
   }
 
   const inputCls =
-    "w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary";
+    "w-full rounded-xs border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary";
 
   return (
     <section id="agendamento" className="bg-background py-20 lg:py-28">
@@ -79,9 +79,9 @@ export function Agendamento() {
               href={whatsappLink("Olá! Quero agendar uma consulta.")}
               target="_blank"
               rel="noopener"
-              className="flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-transform hover:-translate-y-0.5"
+              className="flex items-center gap-4 rounded-xs border border-border bg-card p-5 transition-transform hover:-translate-y-0.5"
             >
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xs bg-primary text-primary-foreground">
                 <MessageCircle className="h-5 w-5" aria-hidden />
               </span>
               <span className="min-w-0">
@@ -91,9 +91,9 @@ export function Agendamento() {
             </a>
             <a
               href={CLINIC.phoneHref}
-              className="flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-transform hover:-translate-y-0.5"
+              className="flex items-center gap-4 rounded-xs border border-border bg-card p-5 transition-transform hover:-translate-y-0.5"
             >
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xs bg-primary text-primary-foreground">
                 <Phone className="h-5 w-5" aria-hidden />
               </span>
               <span className="min-w-0">
@@ -109,7 +109,7 @@ export function Agendamento() {
               { icon: ShieldCheck, t: "Convênios aceitos" },
               { icon: BadgeCheck, t: "Clínica registrada no CRO" },
             ].map((i) => (
-              <div key={i.t} className="rounded-2xl bg-cream p-5">
+              <div key={i.t} className="rounded-xs bg-cream p-5">
                 <i.icon className="h-5 w-5 text-primary" aria-hidden />
                 <p className="mt-3 text-sm font-medium">{i.t}</p>
               </div>
@@ -117,7 +117,7 @@ export function Agendamento() {
           </div>
         </div>
 
-        <form onSubmit={onSubmit} className="rounded-3xl border border-border bg-card p-7 shadow-card sm:p-9">
+        <form onSubmit={onSubmit} className="rounded-xs border border-border bg-card p-7 shadow-card sm:p-9">
           <div className="grid gap-5 sm:grid-cols-2">
             <div className="sm:col-span-2">
               <label htmlFor="nome" className="mb-2 block text-sm font-medium">
@@ -193,7 +193,7 @@ export function Agendamento() {
           </div>
           <button
             type="submit"
-            className="mt-7 w-full rounded-2xl bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-hover"
+            className="mt-7 w-full rounded-xs bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-hover"
           >
             Agendar Consulta
           </button>
@@ -227,7 +227,7 @@ export function Localizacao() {
                 { icon: Clock, t: CLINIC.hours },
               ].map((i) => (
                 <li key={i.t} className="flex items-start gap-4">
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-primary/10">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xs bg-primary/10">
                     <i.icon className="h-5 w-5 text-primary" aria-hidden />
                   </span>
                   {i.href ? (
@@ -246,7 +246,7 @@ export function Localizacao() {
               ))}
             </ul>
           </div>
-          <div className="overflow-hidden rounded-3xl shadow-card">
+          <div className="overflow-hidden rounded-xs shadow-card">
             <iframe
               title="Mapa da Clínica Bella Odontologia em Francisco Beltrão"
               src="https://www.google.com/maps?q=R.%20Ver.%20Romeu%20Lauro%20Werlang%2C%20822%20-%20Centro%2C%20Francisco%20Beltr%C3%A3o%20-%20PR&output=embed"
@@ -277,7 +277,7 @@ export function Footer() {
               target="_blank"
               rel="noopener"
               aria-label="Instagram"
-              className="grid h-10 w-10 place-items-center rounded-full border border-primary-foreground/25 hover:bg-primary-foreground/10"
+              className="grid h-10 w-10 place-items-center rounded-xs border border-primary-foreground/25 hover:bg-primary-foreground/10"
             >
               <Instagram className="h-4 w-4" aria-hidden />
             </a>
@@ -286,7 +286,7 @@ export function Footer() {
               target="_blank"
               rel="noopener"
               aria-label="Facebook"
-              className="grid h-10 w-10 place-items-center rounded-full border border-primary-foreground/25 hover:bg-primary-foreground/10"
+              className="grid h-10 w-10 place-items-center rounded-xs border border-primary-foreground/25 hover:bg-primary-foreground/10"
             >
               <Facebook className="h-4 w-4" aria-hidden />
             </a>
