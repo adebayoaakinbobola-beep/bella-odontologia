@@ -51,24 +51,28 @@ function SectionTitle({
   align?: "center" | "left";
 }) {
   return (
-    <div className={align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
-      <p
-        className={`text-xs font-semibold tracking-[0.28em] uppercase ${light ? "text-gold" : "text-teal"}`}
-      >
-        {eyebrow}
-      </p>
-      <h2
-        className={`mt-4 font-display text-3xl leading-tight sm:text-[2.6rem] ${light ? "text-primary-foreground" : "text-foreground"}`}
-      >
-        {title}
-      </h2>
-      {description && (
-        <p
-          className={`mt-4 text-base leading-relaxed ${light ? "text-primary-foreground/75" : "text-muted-foreground"}`}
+    <div
+      className={
+        align === "center"
+          ? "mx-auto max-w-3xl grid gap-5 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-12"
+          : "grid max-w-4xl gap-5 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-12"
+      }
+    >
+      <p className={`kicker pt-3 lg:w-40 ${light ? "text-gold" : "text-teal"}`}>{eyebrow}</p>
+      <div>
+        <h2
+          className={`font-display text-[2rem] leading-[1.08] sm:text-[2.9rem] ${light ? "text-primary-foreground" : "text-foreground"}`}
         >
-          {description}
-        </p>
-      )}
+          {title}
+        </h2>
+        {description && (
+          <p
+            className={`mt-5 max-w-xl text-[0.95rem] leading-relaxed ${light ? "text-primary-foreground/75" : "text-muted-foreground"}`}
+          >
+            {description}
+          </p>
+        )}
+      </div>
     </div>
   );
 }
