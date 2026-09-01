@@ -1,5 +1,5 @@
 import { MessageCircle, Star, CalendarCheck } from "lucide-react";
-import heroImg from "@/assets/hero-clinica.jpg";
+import heroImg from "@/assets/hero-clinica-new.png";
 import { CLINIC, whatsappLink } from "@/lib/clinic";
 
 const selos = ["Atendimento humanizado", "Tecnologia moderna", "Profissionais especializados"];
