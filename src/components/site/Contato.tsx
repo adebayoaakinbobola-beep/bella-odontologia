@@ -59,16 +59,14 @@ export function Agendamento() {
   }
 
   const inputCls =
-    "w-full rounded-xs border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary";
+    "w-full rounded-lg border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary";
 
   return (
-    <section id="agendamento" className="bg-background py-20 lg:py-28">
+    <section id="agendamento" className="bg-background py-16 lg:py-24">
       <div className="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-[1fr_1.1fr] lg:px-8">
         <div>
           <p className="text-xs font-semibold tracking-[0.28em] text-teal uppercase">Agendamento</p>
-          <h2 className="mt-4 font-display text-3xl sm:text-4xl">
-            Agende sua consulta hoje mesmo
-          </h2>
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl">Agende sua consulta hoje mesmo</h2>
           <p className="mt-5 leading-relaxed text-muted-foreground">
             Preencha o formulário e nossa recepção confirma seu horário em poucos minutos. Prefere
             conversar? Chame no WhatsApp ou ligue direto para a clínica.
@@ -79,9 +77,9 @@ export function Agendamento() {
               href={whatsappLink("Olá! Quero agendar uma consulta.")}
               target="_blank"
               rel="noopener"
-              className="flex items-center gap-4 rounded-xs border border-border bg-card p-5 transition-transform hover:-translate-y-0.5"
+              className="flex items-center gap-4 rounded-lg border border-border bg-card p-5 transition-transform hover:-translate-y-0.5"
             >
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xs bg-primary text-primary-foreground">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-primary text-primary-foreground">
                 <MessageCircle className="h-5 w-5" aria-hidden />
               </span>
               <span className="min-w-0">
@@ -91,9 +89,9 @@ export function Agendamento() {
             </a>
             <a
               href={CLINIC.phoneHref}
-              className="flex items-center gap-4 rounded-xs border border-border bg-card p-5 transition-transform hover:-translate-y-0.5"
+              className="flex items-center gap-4 rounded-lg border border-border bg-card p-5 transition-transform hover:-translate-y-0.5"
             >
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xs bg-primary text-primary-foreground">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-primary text-primary-foreground">
                 <Phone className="h-5 w-5" aria-hidden />
               </span>
               <span className="min-w-0">
@@ -109,7 +107,7 @@ export function Agendamento() {
               { icon: ShieldCheck, t: "Convênios aceitos" },
               { icon: BadgeCheck, t: "Clínica registrada no CRO" },
             ].map((i) => (
-              <div key={i.t} className="rounded-xs bg-cream p-5">
+              <div key={i.t} className="rounded-lg bg-cream p-5">
                 <i.icon className="h-5 w-5 text-primary" aria-hidden />
                 <p className="mt-3 text-sm font-medium">{i.t}</p>
               </div>
@@ -117,14 +115,17 @@ export function Agendamento() {
           </div>
         </div>
 
-        <form onSubmit={onSubmit} className="rounded-xs border border-border bg-card p-7 shadow-card sm:p-9">
+        <form
+          onSubmit={onSubmit}
+          className="rounded-lg border border-border bg-card p-7 shadow-card sm:p-9"
+        >
           <div className="grid gap-5 sm:grid-cols-2">
             <div className="sm:col-span-2">
               <label htmlFor="nome" className="mb-2 block text-sm font-medium">
                 Nome completo
               </label>
               <input id="nome" name="nome" className={inputCls} placeholder="Seu nome" required />
-              {erros['nome'] && <p className="mt-1 text-xs text-destructive">{erros['nome']}</p>}
+              {erros["nome"] && <p className="mt-1 text-xs text-destructive">{erros["nome"]}</p>}
             </div>
             <div>
               <label htmlFor="telefone" className="mb-2 block text-sm font-medium">
@@ -138,7 +139,9 @@ export function Agendamento() {
                 placeholder="(46) 90000-0000"
                 required
               />
-              {erros['telefone'] && <p className="mt-1 text-xs text-destructive">{erros['telefone']}</p>}
+              {erros["telefone"] && (
+                <p className="mt-1 text-xs text-destructive">{erros["telefone"]}</p>
+              )}
             </div>
             <div>
               <label htmlFor="email" className="mb-2 block text-sm font-medium">
@@ -152,7 +155,7 @@ export function Agendamento() {
                 placeholder="voce@email.com"
                 required
               />
-              {erros['email'] && <p className="mt-1 text-xs text-destructive">{erros['email']}</p>}
+              {erros["email"] && <p className="mt-1 text-xs text-destructive">{erros["email"]}</p>}
             </div>
             <div>
               <label htmlFor="tratamento" className="mb-2 block text-sm font-medium">
@@ -168,8 +171,8 @@ export function Agendamento() {
                   </option>
                 ))}
               </select>
-              {erros['tratamento'] && (
-                <p className="mt-1 text-xs text-destructive">{erros['tratamento']}</p>
+              {erros["tratamento"] && (
+                <p className="mt-1 text-xs text-destructive">{erros["tratamento"]}</p>
               )}
             </div>
             <div>
@@ -193,7 +196,7 @@ export function Agendamento() {
           </div>
           <button
             type="submit"
-            className="mt-7 w-full rounded-xs bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-hover"
+            className="mt-7 w-full rounded-lg bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-elevated"
           >
             Agendar Consulta
           </button>
@@ -208,11 +211,13 @@ export function Agendamento() {
 
 export function Localizacao() {
   return (
-    <section id="contato" className="bg-cream py-20 lg:py-28">
+    <section id="contato" className="bg-cream py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-2">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
-            <p className="text-xs font-semibold tracking-[0.28em] text-teal uppercase">Localização</p>
+            <p className="text-xs font-semibold tracking-[0.28em] text-teal uppercase">
+              Localização
+            </p>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl">Venha nos visitar</h2>
             <ul className="mt-8 space-y-5">
               {[
@@ -227,7 +232,7 @@ export function Localizacao() {
                 { icon: Clock, t: CLINIC.hours },
               ].map((i) => (
                 <li key={i.t} className="flex items-start gap-4">
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xs bg-primary/10">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-primary/10">
                     <i.icon className="h-5 w-5 text-primary" aria-hidden />
                   </span>
                   {i.href ? (
@@ -240,13 +245,15 @@ export function Localizacao() {
                       {i.t}
                     </a>
                   ) : (
-                    <span className="pt-2 text-sm leading-relaxed text-muted-foreground">{i.t}</span>
+                    <span className="pt-2 text-sm leading-relaxed text-muted-foreground">
+                      {i.t}
+                    </span>
                   )}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="overflow-hidden rounded-xs shadow-card">
+          <div className="overflow-hidden rounded-lg shadow-card">
             <iframe
               title="Mapa da Clínica Bella Odontologia em Francisco Beltrão"
               src="https://www.google.com/maps?q=R.%20Ver.%20Romeu%20Lauro%20Werlang%2C%20822%20-%20Centro%2C%20Francisco%20Beltr%C3%A3o%20-%20PR&output=embed"
@@ -267,7 +274,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div>
           <p className="font-display text-2xl">Bella Odontologia</p>
-          <p className="mt-4 text-sm leading-relaxed text-primary-foreground/75">
+          <p className="mt-4 text-sm leading-relaxed text-primary-foreground/85">
             Clínica odontológica em Francisco Beltrão – PR. Implantes, ortodontia, estética dental e
             atendimento humanizado para toda a família.
           </p>
@@ -277,7 +284,7 @@ export function Footer() {
               target="_blank"
               rel="noopener"
               aria-label="Instagram"
-              className="grid h-10 w-10 place-items-center rounded-xs border border-primary-foreground/25 hover:bg-primary-foreground/10"
+              className="grid h-10 w-10 place-items-center rounded-lg border border-primary-foreground/25 hover:bg-primary-foreground/10"
             >
               <Instagram className="h-4 w-4" aria-hidden />
             </a>
@@ -286,7 +293,7 @@ export function Footer() {
               target="_blank"
               rel="noopener"
               aria-label="Facebook"
-              className="grid h-10 w-10 place-items-center rounded-xs border border-primary-foreground/25 hover:bg-primary-foreground/10"
+              className="grid h-10 w-10 place-items-center rounded-lg border border-primary-foreground/25 hover:bg-primary-foreground/10"
             >
               <Facebook className="h-4 w-4" aria-hidden />
             </a>
@@ -295,7 +302,7 @@ export function Footer() {
 
         <nav>
           <h3 className="font-display text-lg">Menu</h3>
-          <ul className="mt-4 space-y-2 text-sm text-primary-foreground/75">
+          <ul className="mt-4 space-y-2 text-sm text-primary-foreground/90">
             {[
               ["#sobre", "Sobre a clínica"],
               ["#tratamentos", "Tratamentos"],
@@ -305,7 +312,7 @@ export function Footer() {
               ["#agendamento", "Agendamento"],
             ].map(([href, label]) => (
               <li key={href}>
-                <a href={href} className="hover:text-gold">
+                <a href={href} className="transition-colors hover:text-gold">
                   {label}
                 </a>
               </li>
@@ -315,15 +322,15 @@ export function Footer() {
 
         <div>
           <h3 className="font-display text-lg">Atendimento</h3>
-          <ul className="mt-4 space-y-2 text-sm text-primary-foreground/75">
+          <ul className="mt-4 space-y-2 text-sm text-primary-foreground/90">
             <li>{CLINIC.hours}</li>
             <li>
-              <a href={CLINIC.phoneHref} className="hover:text-gold">
+              <a href={CLINIC.phoneHref} className="transition-colors hover:text-gold">
                 {CLINIC.phone}
               </a>
             </li>
             <li>
-              <a href={`mailto:${CLINIC.email}`} className="hover:text-gold">
+              <a href={`mailto:${CLINIC.email}`} className="transition-colors hover:text-gold">
                 {CLINIC.email}
               </a>
             </li>
@@ -333,21 +340,21 @@ export function Footer() {
 
         <div>
           <h3 className="font-display text-lg">Institucional</h3>
-          <ul className="mt-4 space-y-2 text-sm text-primary-foreground/75">
+          <ul className="mt-4 space-y-2 text-sm text-primary-foreground/90">
             <li>Política de Privacidade</li>
             <li>LGPD</li>
             <li>Termos de Uso</li>
             <li>
-              <a href="/sitemap.xml" className="hover:text-gold">
+              <a href="/sitemap.xml" className="transition-colors hover:text-gold">
                 Mapa do Site
               </a>
             </li>
           </ul>
         </div>
       </div>
-      <div className="border-t border-primary-foreground/15 px-5 py-6 text-center text-xs text-primary-foreground/60">
-        © {new Date().getFullYear()} Bella Odontologia · Responsável Técnica: Dra. Danielle
-        C. Lourenço · CRO-PR 22533
+      <div className="border-t border-primary-foreground/15 px-5 py-6 text-center text-xs text-primary-foreground/70">
+        © {new Date().getFullYear()} Bella Odontologia · Responsável Técnica: Dra. Danielle C.
+        Lourenço · CRO-PR 22533
       </div>
     </footer>
   );

@@ -6,7 +6,10 @@ const selos = ["Atendimento humanizado", "Tecnologia moderna", "Profissionais es
 
 export function Hero() {
   return (
-    <section id="inicio" className="relative isolate overflow-hidden bg-primary text-primary-foreground">
+    <section
+      id="inicio"
+      className="relative isolate overflow-hidden bg-primary text-primary-foreground"
+    >
       {/* Imagem de fundo — enquadrada à direita, escurecida à esquerda para leitura */}
       <div aria-hidden className="absolute inset-0 -z-10">
         <img
@@ -15,13 +18,13 @@ export function Hero() {
           width={1600}
           height={1200}
           fetchPriority="high"
-          className="h-full w-full object-cover object-[70%_center] opacity-70 lg:opacity-100"
+          className="h-full w-full object-cover object-[70%_center] opacity-60 lg:opacity-80"
         />
-        <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/92 to-primary/35 lg:to-transparent" />
-        <div className="absolute inset-0 bg-linear-to-t from-primary/70 via-transparent to-primary/40" />
+        <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/85 to-primary/25 lg:to-primary/20" />
+        <div className="absolute inset-0 bg-linear-to-t from-primary/60 via-transparent to-primary/30" />
       </div>
 
-      <div className="mx-auto grid max-w-[1440px] gap-16 px-5 pt-32 pb-20 sm:px-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:pt-44 lg:pb-32">
+      <div className="mx-auto grid max-w-[1440px] gap-16 px-5 pt-28 pb-20 sm:px-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:pt-36 lg:pb-24">
         <div className="max-w-2xl">
           <p className="kicker text-gold">Clínica odontológica · Francisco Beltrão · PR</p>
 
@@ -32,15 +35,15 @@ export function Hero() {
 
           <div aria-hidden className="mt-10 h-px w-24 bg-gold/70" />
 
-          <p className="mt-8 max-w-lg text-base leading-relaxed text-primary-foreground/80 sm:text-[1.05rem]">
+          <p className="mt-6 max-w-lg text-base leading-relaxed text-primary-foreground/85 sm:text-[1.05rem]">
             Odontologia moderna, diagnóstico preciso e atendimento humanizado — um plano de
             tratamento construído sob medida para a saúde e a confiança do seu sorriso.
           </p>
 
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
               href="#agendamento"
-              className="group inline-flex items-center justify-center gap-3 rounded-xs bg-primary-foreground px-9 py-5 text-[0.78rem] font-semibold tracking-[0.1em] text-primary uppercase transition-colors duration-300 hover:bg-gold"
+              className="group inline-flex items-center justify-center gap-3 rounded-lg bg-primary-foreground px-10 py-6 text-[0.78rem] font-semibold tracking-[0.1em] text-primary uppercase transition-all duration-300 shadow-soft hover:shadow-elevated hover:-translate-y-1"
             >
               <CalendarCheck className="h-4 w-4" aria-hidden /> Agendar minha avaliação
             </a>
@@ -48,7 +51,7 @@ export function Hero() {
               href={whatsappLink("Olá! Vim pelo site e quero agendar uma avaliação.")}
               target="_blank"
               rel="noopener"
-              className="inline-flex items-center justify-center gap-3 rounded-xs border border-primary-foreground/40 px-9 py-5 text-[0.78rem] font-semibold tracking-[0.1em] text-primary-foreground uppercase transition-colors duration-300 hover:border-gold hover:text-gold"
+              className="inline-flex items-center justify-center gap-3 rounded-lg border-2 border-primary-foreground/50 px-10 py-6 text-[0.78rem] font-semibold tracking-[0.1em] text-primary-foreground uppercase transition-all duration-300 hover:border-gold hover:text-gold hover:bg-primary-foreground/5 hover:shadow-soft"
             >
               <MessageCircle className="h-4 w-4" aria-hidden /> Falar no WhatsApp
             </a>
@@ -56,7 +59,10 @@ export function Hero() {
 
           <dl className="mt-16 grid max-w-xl grid-cols-2 gap-y-6 border-t border-primary-foreground/20 pt-8 sm:grid-cols-3">
             <div>
-              <dt className="flex items-center gap-1.5" aria-label={`${CLINIC.rating.toFixed(1)} de 5 no Google`}>
+              <dt
+                className="flex items-center gap-1.5"
+                aria-label={`${CLINIC.rating.toFixed(1)} de 5 no Google`}
+              >
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-3.5 w-3.5 fill-gold text-gold" aria-hidden />
                 ))}

@@ -81,7 +81,10 @@ function SectionTitle({
 
 export function ProvaSocial() {
   const itens = [
-    { destaque: `${CLINIC.rating.toFixed(1)}`, label: `Avaliação no Google · ${CLINIC.reviews} avaliações` },
+    {
+      destaque: `${CLINIC.rating.toFixed(1)}`,
+      label: `Avaliação no Google · ${CLINIC.reviews} avaliações`,
+    },
     { destaque: "CRO-PR 22533", label: "Clínica com responsável técnica registrada" },
     { destaque: "12x", label: "Parcelamento disponível" },
     { destaque: "Seg–Sáb", label: "Atendimento de segunda a sábado" },
@@ -104,12 +107,24 @@ export function ProvaSocial() {
 
 export function Sobre() {
   const beneficios = [
-    { icon: ShieldCheck, t: "Biossegurança rigorosa", d: "Protocolos rígidos de esterilização em cada atendimento." },
-    { icon: Cpu, t: "Diagnóstico preciso", d: "Equipamentos modernos para planejar cada caso com previsibilidade." },
-    { icon: UserRoundCheck, t: "Cuidado humanizado", d: "Escuta atenta e plano de tratamento explicado com clareza." },
+    {
+      icon: ShieldCheck,
+      t: "Biossegurança rigorosa",
+      d: "Protocolos rígidos de esterilização em cada atendimento.",
+    },
+    {
+      icon: Cpu,
+      t: "Diagnóstico preciso",
+      d: "Equipamentos modernos para planejar cada caso com previsibilidade.",
+    },
+    {
+      icon: UserRoundCheck,
+      t: "Cuidado humanizado",
+      d: "Escuta atenta e plano de tratamento explicado com clareza.",
+    },
   ];
   return (
-    <section id="sobre" className="bg-background py-20 lg:py-28">
+    <section id="sobre" className="bg-background py-16 lg:py-24">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-[1.05fr_1fr] lg:gap-20 lg:px-8">
         <Reveal>
           <div className="relative">
@@ -119,11 +134,11 @@ export function Sobre() {
               width={1200}
               height={900}
               loading="lazy"
-              className="w-full rounded-xs object-cover shadow-soft"
+              className="w-full rounded-lg object-cover shadow-elevated"
             />
-            <div className="absolute -bottom-6 right-6 hidden rounded-xs bg-primary px-6 py-5 text-primary-foreground shadow-soft sm:block">
-              <p className="font-display text-xl">Bella Odontologia</p>
-              <p className="mt-1 text-xs tracking-[0.18em] uppercase text-primary-foreground/70">
+            <div className="absolute -bottom-8 right-8 hidden rounded-lg bg-primary px-7 py-6 text-primary-foreground shadow-elevated sm:block">
+              <p className="font-display text-lg font-semibold">Bella Odontologia</p>
+              <p className="mt-2 text-xs tracking-[0.18em] uppercase text-primary-foreground/70">
                 Francisco Beltrão · PR
               </p>
             </div>
@@ -146,12 +161,12 @@ export function Sobre() {
             <div className="mt-9 space-y-6">
               {beneficios.map((b) => (
                 <div key={b.t} className="flex gap-4">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xs bg-teal/10">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-teal/10 ring-1 ring-teal/20">
                     <b.icon className="h-5 w-5 text-teal" aria-hidden />
                   </span>
                   <div className="min-w-0">
-                    <h3 className="font-display text-lg">{b.t}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{b.d}</p>
+                    <h3 className="font-display text-lg text-foreground">{b.t}</h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{b.d}</p>
                   </div>
                 </div>
               ))}
@@ -162,7 +177,10 @@ export function Sobre() {
               className="group mt-9 inline-flex items-center gap-2 text-sm font-semibold text-primary"
             >
               Conheça nossa clínica
-              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden />
+              <ArrowRight
+                className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                aria-hidden
+              />
             </a>
           </div>
         </Reveal>
@@ -225,7 +243,7 @@ export function Tratamentos() {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <section id="tratamentos" className="bg-cream py-20 lg:py-28">
+    <section id="tratamentos" className="bg-cream py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionTitle
           eyebrow="Nossos Tratamentos"
@@ -240,7 +258,7 @@ export function Tratamentos() {
                 href={whatsappLink(`Olá! Quero saber mais sobre ${t.nome}.`)}
                 target="_blank"
                 rel="noopener"
-                className="group flex h-full flex-col overflow-hidden rounded-xs bg-card shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-hover"
+                className="group flex h-full flex-col overflow-hidden rounded-lg bg-card shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-elevated"
               >
                 <div className="relative h-52 overflow-hidden">
                   <img
@@ -249,9 +267,9 @@ export function Tratamentos() {
                     width={800}
                     height={600}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <span className="absolute bottom-3 left-3 grid h-11 w-11 place-items-center rounded-xs bg-background/90 text-primary backdrop-blur">
+                  <span className="absolute bottom-3 left-3 grid h-11 w-11 place-items-center rounded-lg bg-background/95 text-primary backdrop-blur shadow-sm">
                     <t.icon className="h-5 w-5" aria-hidden />
                   </span>
                 </div>
@@ -281,7 +299,7 @@ export function Tratamentos() {
                 href={whatsappLink(`Olá! Quero saber mais sobre ${o}.`)}
                 target="_blank"
                 rel="noopener"
-                className="rounded-xs border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-teal hover:text-teal"
+                className="rounded-lg border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-teal hover:text-teal"
               >
                 {o}
               </a>
@@ -293,7 +311,7 @@ export function Tratamentos() {
           <div className="mt-12 text-center">
             <button
               onClick={() => setExpanded(true)}
-              className="rounded-xs border border-primary px-8 py-4 text-sm font-semibold text-primary transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary hover:text-primary-foreground"
+              className="rounded-lg border-2 border-primary px-9 py-5 text-sm font-semibold text-primary transition-all duration-300 hover:-translate-y-1 hover:bg-primary hover:text-primary-foreground hover:shadow-elevated"
             >
               Conhecer todos os tratamentos
             </button>
@@ -331,7 +349,7 @@ const diferenciais = [
 
 export function PorQue() {
   return (
-    <section className="gradient-hero py-20 lg:py-28">
+    <section className="gradient-hero py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionTitle
           light
@@ -342,8 +360,8 @@ export function PorQue() {
           {diferenciais.map((d, i) => (
             <Reveal key={d.t} delay={(i % 2) * 90}>
               <div className="flex gap-5">
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xs bg-primary-foreground/8 ring-1 ring-gold/40">
-                  <d.icon className="h-5 w-5 text-gold" aria-hidden />
+                <span className="grid h-14 w-14 shrink-0 place-items-center rounded-lg bg-primary-foreground/10 ring-1 ring-gold/50">
+                  <d.icon className="h-6 w-6 text-gold" aria-hidden />
                 </span>
                 <div className="min-w-0">
                   <h3 className="font-display text-xl text-primary-foreground">{d.t}</h3>
@@ -358,7 +376,7 @@ export function PorQue() {
             href={whatsappLink("Olá! Quero falar com um especialista.")}
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center gap-2 rounded-xs bg-background px-8 py-4 text-sm font-semibold text-primary shadow-soft transition-transform duration-200 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 rounded-lg bg-background px-9 py-5 text-sm font-semibold text-primary shadow-soft transition-all duration-300 hover:shadow-elevated hover:-translate-y-1"
           >
             <MessageCircle className="h-4 w-4" aria-hidden /> Fale com um especialista
           </a>
@@ -371,20 +389,33 @@ export function PorQue() {
 /* ---------------------------------- Como funciona --------------------------------- */
 
 const etapas = [
-  { n: "01", t: "Agende sua avaliação", d: "Fale com a recepção pelo WhatsApp ou telefone e escolha o melhor horário." },
-  { n: "02", t: "Avaliação completa", d: "Exame clínico detalhado para entender suas necessidades e objetivos." },
-  { n: "03", t: "Plano personalizado", d: "Apresentamos o tratamento indicado, etapas, prazos e condições de pagamento." },
-  { n: "04", t: "Transforme seu sorriso", d: "Tratamento conduzido com acompanhamento próximo e manutenção preventiva." },
+  {
+    n: "01",
+    t: "Agende sua avaliação",
+    d: "Fale com a recepção pelo WhatsApp ou telefone e escolha o melhor horário.",
+  },
+  {
+    n: "02",
+    t: "Avaliação completa",
+    d: "Exame clínico detalhado para entender suas necessidades e objetivos.",
+  },
+  {
+    n: "03",
+    t: "Plano personalizado",
+    d: "Apresentamos o tratamento indicado, etapas, prazos e condições de pagamento.",
+  },
+  {
+    n: "04",
+    t: "Transforme seu sorriso",
+    d: "Tratamento conduzido com acompanhamento próximo e manutenção preventiva.",
+  },
 ];
 
 export function ComoFunciona() {
   return (
-    <section className="bg-background py-20 lg:py-28">
+    <section className="bg-background py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <SectionTitle
-          eyebrow="Como funciona"
-          title="Um caminho simples até o seu novo sorriso"
-        />
+        <SectionTitle eyebrow="Como funciona" title="Um caminho simples até o seu novo sorriso" />
         <div className="relative mt-16">
           <div
             aria-hidden
@@ -394,10 +425,10 @@ export function ComoFunciona() {
             {etapas.map((e, i) => (
               <Reveal key={e.n} delay={i * 100}>
                 <div className="relative">
-                  <span className="relative z-10 grid h-12 w-12 place-items-center rounded-xs bg-primary font-display text-base text-primary-foreground">
+                  <span className="relative z-10 grid h-14 w-14 place-items-center rounded-lg bg-primary font-display text-base font-semibold text-primary-foreground shadow-soft">
                     {e.n}
                   </span>
-                  <h3 className="mt-6 font-display text-xl">{e.t}</h3>
+                  <h3 className="mt-7 font-display text-xl">{e.t}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{e.d}</p>
                 </div>
               </Reveal>
@@ -420,15 +451,12 @@ const especialidades = [
 
 export function Equipe() {
   return (
-    <section id="equipe" className="bg-cream py-20 lg:py-28">
+    <section id="equipe" className="bg-cream py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <SectionTitle
-          eyebrow="Responsável Técnica"
-          title="Quem cuida do seu sorriso"
-        />
+        <SectionTitle eyebrow="Responsável Técnica" title="Quem cuida do seu sorriso" />
         <Reveal>
-          <div className="mt-14 grid items-center gap-10 rounded-xs bg-card p-6 shadow-soft lg:grid-cols-[0.85fr_1fr] lg:gap-16 lg:p-10">
-            <div className="overflow-hidden rounded-xs bg-muted">
+          <div className="mt-14 grid items-center gap-12 rounded-lg bg-card p-8 shadow-soft lg:grid-cols-[0.85fr_1fr] lg:gap-16 lg:p-12">
+            <div className="overflow-hidden rounded-lg bg-muted">
               <img
                 src={draFoto1}
                 alt="Dra. Danielle C. Lourenço, cirurgiã-dentista da Bella Odontologia"
@@ -437,21 +465,23 @@ export function Equipe() {
               />
             </div>
             <div>
-              <h3 className="font-display text-3xl sm:text-4xl">Dra. Danielle C. Lourenço</h3>
-              <p className="mt-2 text-base font-medium text-teal">Cirurgiã-Dentista</p>
-              <p className="mt-1 inline-flex items-center gap-2 text-xs tracking-[0.18em] text-muted-foreground uppercase">
+              <h3 className="font-display text-4xl sm:text-5xl text-foreground">
+                Dra. Danielle C. Lourenço
+              </h3>
+              <p className="mt-3 text-lg font-semibold text-teal">Cirurgiã-Dentista</p>
+              <p className="mt-2 inline-flex items-center gap-2 text-xs tracking-[0.18em] text-muted-foreground uppercase">
                 <BadgeCheck className="h-4 w-4 text-gold" aria-hidden /> CRO-PR 22533
               </p>
-              <p className="mt-6 leading-relaxed text-muted-foreground">
+              <p className="mt-7 leading-relaxed text-muted-foreground">
                 Responsável técnica da Bella Odontologia, dedica-se a oferecer tratamentos com
                 excelência técnica, ética e um olhar humanizado. Cada plano é construído junto com o
                 paciente, unindo diagnóstico preciso, conforto e resultados naturais e duradouros.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-9 flex flex-wrap gap-3">
                 {especialidades.map((e) => (
                   <span
                     key={e}
-                    className="rounded-xs bg-secondary px-4 py-2 text-sm font-medium text-secondary-foreground"
+                    className="rounded-lg bg-teal/10 px-5 py-2.5 text-sm font-semibold text-teal ring-1 ring-teal/20"
                   >
                     {e}
                   </span>
@@ -459,7 +489,7 @@ export function Equipe() {
               </div>
               <a
                 href="#agendamento"
-                className="mt-9 inline-flex items-center gap-2 rounded-xs bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-hover"
+                className="mt-10 inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-5 text-sm font-semibold text-primary-foreground shadow-soft transition-all duration-300 hover:shadow-elevated hover:-translate-y-1"
               >
                 <CalendarCheck className="h-4 w-4" aria-hidden /> Agendar com a Dra. Danielle
               </a>
@@ -485,10 +515,22 @@ const depoimentos = [
 function GoogleIcon({ className = "h-5 w-5" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 48 48" aria-hidden focusable="false">
-      <path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.6 30.2.5 24 .5 14.6.5 6.5 5.9 2.6 13.7l7.8 6.1C12.3 13.6 17.6 9.5 24 9.5z" />
-      <path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-2.8-.4-4.1H24v7.5h12.7c-.3 2.1-1.6 5.3-4.7 7.4l7.6 5.9c4.5-4.2 6.9-10.3 6.9-16.7z" />
-      <path fill="#FBBC05" d="M10.4 28.2A14.5 14.5 0 0 1 9.6 24c0-1.5.3-2.9.7-4.2l-7.8-6.1A23.9 23.9 0 0 0 0 24c0 3.9.9 7.5 2.6 10.7l7.8-6.5z" />
-      <path fill="#34A853" d="M24 47.5c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.9c-2 1.4-4.8 2.4-8.3 2.4-6.4 0-11.7-4.1-13.6-9.9l-7.8 6.1C6.5 42.1 14.6 47.5 24 47.5z" />
+      <path
+        fill="#EA4335"
+        d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.6 30.2.5 24 .5 14.6.5 6.5 5.9 2.6 13.7l7.8 6.1C12.3 13.6 17.6 9.5 24 9.5z"
+      />
+      <path
+        fill="#4285F4"
+        d="M46.5 24.5c0-1.6-.1-2.8-.4-4.1H24v7.5h12.7c-.3 2.1-1.6 5.3-4.7 7.4l7.6 5.9c4.5-4.2 6.9-10.3 6.9-16.7z"
+      />
+      <path
+        fill="#FBBC05"
+        d="M10.4 28.2A14.5 14.5 0 0 1 9.6 24c0-1.5.3-2.9.7-4.2l-7.8-6.1A23.9 23.9 0 0 0 0 24c0 3.9.9 7.5 2.6 10.7l7.8-6.5z"
+      />
+      <path
+        fill="#34A853"
+        d="M24 47.5c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.9c-2 1.4-4.8 2.4-8.3 2.4-6.4 0-11.7-4.1-13.6-9.9l-7.8 6.1C6.5 42.1 14.6 47.5 24 47.5z"
+      />
     </svg>
   );
 }
@@ -496,7 +538,7 @@ function GoogleIcon({ className = "h-5 w-5" }: { className?: string }) {
 export function Depoimentos() {
   const [i, setI] = useState(0);
   return (
-    <section id="depoimentos" className="bg-background py-20 lg:py-28">
+    <section id="depoimentos" className="bg-background py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionTitle
           eyebrow="Avaliações"
@@ -507,7 +549,7 @@ export function Depoimentos() {
         <div className="mt-14 hidden gap-7 lg:grid lg:grid-cols-3">
           {depoimentos.map((d, k) => (
             <Reveal key={d.nome} delay={k * 90}>
-              <figure className="flex h-full flex-col rounded-xs bg-card p-8 shadow-card">
+              <figure className="flex h-full flex-col rounded-lg bg-card p-8 shadow-card">
                 <div className="flex items-center gap-1" aria-label="5 de 5 estrelas">
                   {Array.from({ length: 5 }).map((_, s) => (
                     <Star key={s} className="h-4 w-4 fill-gold text-gold" aria-hidden />
@@ -526,7 +568,7 @@ export function Depoimentos() {
         </div>
 
         <div className="mt-12 lg:hidden">
-          <figure className="rounded-xs bg-card p-7 shadow-card">
+          <figure className="rounded-lg bg-card p-7 shadow-card">
             <div className="flex items-center gap-1" aria-label="5 de 5 estrelas">
               {Array.from({ length: 5 }).map((_, s) => (
                 <Star key={s} className="h-4 w-4 fill-gold text-gold" aria-hidden />
@@ -542,14 +584,14 @@ export function Depoimentos() {
             <button
               onClick={() => setI((v) => (v - 1 + depoimentos.length) % depoimentos.length)}
               aria-label="Avaliação anterior"
-              className="grid h-11 w-11 place-items-center rounded-xs border border-border hover:bg-accent"
+              className="grid h-11 w-11 place-items-center rounded-lg border border-border hover:bg-accent"
             >
               <ChevronLeft className="h-5 w-5" aria-hidden />
             </button>
             <button
               onClick={() => setI((v) => (v + 1) % depoimentos.length)}
               aria-label="Próxima avaliação"
-              className="grid h-11 w-11 place-items-center rounded-xs border border-border hover:bg-accent"
+              className="grid h-11 w-11 place-items-center rounded-lg border border-border hover:bg-accent"
             >
               <ChevronRight className="h-5 w-5" aria-hidden />
             </button>
@@ -561,7 +603,7 @@ export function Depoimentos() {
             href={CLINIC.maps}
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center gap-2 rounded-xs border border-border bg-card px-7 py-4 text-sm font-semibold text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-teal hover:text-teal"
+            className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-7 py-4 text-sm font-semibold text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-teal hover:text-teal"
           >
             <GoogleIcon className="h-4 w-4" /> Ver avaliações no Google
           </a>
@@ -575,26 +617,26 @@ export function Depoimentos() {
 
 export function CtaFinal() {
   return (
-    <section className="bg-background px-5 py-10 lg:px-8">
-      <div className="gradient-hero mx-auto max-w-7xl rounded-xs px-6 py-16 text-center shadow-soft sm:px-12 lg:py-20">
-        <h2 className="mx-auto max-w-2xl font-display text-3xl text-primary-foreground sm:text-[2.7rem] sm:leading-tight">
+    <section className="bg-background px-5 py-16 lg:px-8 lg:py-20">
+      <div className="gradient-hero mx-auto max-w-4xl rounded-lg px-8 py-20 text-center shadow-elevated sm:px-16">
+        <h2 className="mx-auto max-w-2xl font-display text-3xl leading-tight text-primary-foreground sm:text-4xl lg:text-5xl">
           Pronto para cuidar do seu sorriso?
         </h2>
-        <p className="mx-auto mt-5 max-w-xl leading-relaxed text-primary-foreground/75">
+        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground/85 sm:text-lg">
           Agende sua avaliação e descubra o tratamento ideal para você.
         </p>
-        <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+        <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
           <a
             href="#agendamento"
-            className="inline-flex items-center justify-center gap-2 rounded-xs bg-background px-8 py-4 text-sm font-semibold text-primary transition-transform duration-200 hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary-foreground px-10 py-5 text-sm font-semibold text-primary shadow-soft transition-all duration-300 hover:shadow-elevated hover:-translate-y-1"
           >
-            <CalendarCheck className="h-4 w-4" aria-hidden /> Agendar avaliação
+            <CalendarCheck className="h-4 w-4" aria-hidden /> Agendar minha avaliação
           </a>
           <a
             href={whatsappLink("Olá! Quero agendar uma avaliação.")}
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center justify-center gap-2 rounded-xs border border-primary-foreground/35 px-8 py-4 text-sm font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary-foreground/10"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-primary-foreground/40 px-10 py-5 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:border-gold hover:text-gold hover:bg-primary-foreground/5"
           >
             <MessageCircle className="h-4 w-4" aria-hidden /> Falar no WhatsApp
           </a>
@@ -636,7 +678,7 @@ export const faqs = [
 export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="bg-background py-20 lg:py-28">
+    <section id="faq" className="bg-background py-16 lg:py-24">
       <div className="mx-auto max-w-[800px] px-5 lg:px-8">
         <SectionTitle eyebrow="FAQ" title="Perguntas frequentes" />
         <div className="mt-12 divide-y divide-border">
@@ -650,7 +692,7 @@ export function FAQ() {
                   className="flex w-full items-center justify-between gap-5 py-6 text-left"
                 >
                   <span className="font-display text-lg sm:text-xl">{f.q}</span>
-                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xs bg-secondary text-primary">
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-secondary text-primary">
                     {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                   </span>
                 </button>
@@ -741,7 +783,7 @@ function ArticleCard({
 }) {
   if (featured) {
     return (
-      <article className="group h-full overflow-hidden rounded-xs bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-hover">
+      <article className="group h-full overflow-hidden rounded-lg bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-elevated">
         <img
           src={post.img}
           alt={post.t}
@@ -769,7 +811,7 @@ function ArticleCard({
                 href={whatsappLink(`Olá! Quero saber mais sobre: ${post.t}`)}
                 target="_blank"
                 rel="noopener"
-                className="mt-6 inline-flex items-center gap-2 rounded-xs bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5"
+                className="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5"
               >
                 Falar com um especialista
               </a>
@@ -792,12 +834,12 @@ function ArticleCard({
   }
 
   return (
-    <article className="group grid grid-cols-[110px_minmax(0,1fr)] items-start gap-5 overflow-hidden rounded-xs bg-card p-4 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-hover sm:grid-cols-[160px_minmax(0,1fr)]">
+    <article className="group grid grid-cols-[110px_minmax(0,1fr)] items-start gap-5 overflow-hidden rounded-lg bg-card p-4 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-elevated sm:grid-cols-[160px_minmax(0,1fr)]">
       <img
         src={post.img}
         alt={post.t}
         loading="lazy"
-        className="h-28 w-full rounded-xs object-cover sm:h-32"
+        className="h-28 w-full rounded-lg object-cover sm:h-32"
       />
       <div className="min-w-0">
         <p className="text-[11px] font-semibold tracking-[0.2em] text-teal uppercase">{post.cat}</p>
@@ -818,7 +860,7 @@ function ArticleCard({
               href={whatsappLink(`Olá! Quero saber mais sobre: ${post.t}`)}
               target="_blank"
               rel="noopener"
-              className="mt-4 inline-flex items-center gap-2 rounded-xs bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5"
+              className="mt-4 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5"
             >
               Falar com um especialista
             </a>
@@ -847,7 +889,7 @@ export function Blog() {
   const toggle = (titulo: string) => setAberto((atual) => (atual === titulo ? null : titulo));
 
   return (
-    <section id="blog" className="bg-cream py-20 lg:py-28">
+    <section id="blog" className="bg-cream py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionTitle
           eyebrow="Blog"
@@ -868,11 +910,7 @@ export function Blog() {
           <div className="grid gap-6">
             {restantes.map((p, i) => (
               <Reveal key={p.t} delay={i * 90}>
-                <ArticleCard
-                  post={p}
-                  expanded={aberto === p.t}
-                  onToggle={() => toggle(p.t)}
-                />
+                <ArticleCard post={p} expanded={aberto === p.t} onToggle={() => toggle(p.t)} />
               </Reveal>
             ))}
           </div>
