@@ -30,6 +30,7 @@ import tratImplante from "@/assets/pexels-cottonbro-6502019.jpg";
 import tratOrto from "@/assets/pexels-itslauravillela-28407749.jpg";
 import tratEstetica from "@/assets/pexels-karola-g-6627572.jpg";
 import tratGeral from "@/assets/pexels-shvetsa-3845736.jpg";
+import tratPreventiva from "@/assets/pexels-tima-miroshnichenko-5355837.jpg";
 import tratCanal from "@/assets/pexels-mm-dental-56682202-8176834.jpg";
 import blogEscovacao from "@/assets/blog-escovacao.jpg";
 import blogEscova from "@/assets/blog-escova.jpg";
@@ -220,7 +221,7 @@ const tratamentos = [
     icon: Brush,
     nome: "Odontologia Preventiva",
     desc: "Check-up, limpeza profissional e orientação para manter a saúde bucal em dia.",
-    img: tratGeral,
+    img: tratPreventiva,
   },
   {
     icon: Syringe,
