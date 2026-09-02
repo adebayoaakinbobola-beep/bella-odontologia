@@ -29,7 +29,7 @@ import sorrisoImg from "@/assets/pexels-nick-souza-225420956-11999471.jpg";
 import tratImplante from "@/assets/trat-implante-new.jpg";
 import tratOrto from "@/assets/trat-orto-new.jpg";
 import tratEstetica from "@/assets/trat-estetica-new.jpg";
-import tratGeral from "@/assets/trat-geral-new.jpg";
+import tratGeral from "@/assets/pexels-shvetsa-3845736.jpg";
 import tratCanal from "@/assets/pexels-mm-dental-56682202-8176834.jpg";
 import blogEscovacao from "@/assets/blog-escovacao.jpg";
 import blogEscova from "@/assets/blog-escova.jpg";
