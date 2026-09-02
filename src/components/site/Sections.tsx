@@ -34,7 +34,7 @@ import tratPreventiva from "@/assets/pexels-tima-miroshnichenko-5355837.jpg";
 import tratCanal from "@/assets/pexels-mm-dental-56682202-8176834.jpg";
 import blogEscovacao from "@/assets/blog-escovacao.jpg";
 import blogEscova from "@/assets/blog-escova.jpg";
-import blogImplante from "@/assets/blog-implante.jpg";
+import blogImplanteFaq from "@/assets/pexels-tima-miroshnichenko-5355723.jpg";
 import blogClareamento from "@/assets/blog-clareamento.jpg";
 import blogPreventiva from "@/pexels-marcus-aurelius-9788575.jpg";
 import draFoto1 from "@/assets/dra-danielle.jpeg";
@@ -798,7 +798,7 @@ const posts = [
     d: "Com higiene adequada e manutenções periódicas, o implante pode durar décadas. Entenda a osseointegração e os cuidados essenciais.",
     cat: "Perguntas frequentes",
     data: "Leitura de 5 min",
-    img: blogImplante,
+    img: blogImplanteFaq,
     conteudo: [
       "O implante dentário é hoje a solução mais completa para substituir dentes perdidos. Quando bem indicado e realizado por um profissional qualificado, pode durar muitos anos — em alguns casos, toda a vida.",
       "O tratamento acontece em duas fases principais. Na primeira, o implante — uma pequena raiz de titânio — é colocado no osso da mandíbula ou maxila. Esse processo é feito com anestesia local e, na grande maioria dos casos, é indolor. Depois da cirurgia, começa a fase de osseointegração, que leva em média de 3 a 6 meses. Nesse período, o osso se une ao implante, formando uma base sólida e estável.",
