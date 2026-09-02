@@ -128,7 +128,7 @@ export function Sobre() {
     },
   ];
   return (
-    <section id="sobre" className="bg-background py-16 max-sm:pt-10 max-sm:pb-20 lg:py-24">
+    <section id="sobre" className="bg-background py-16 max-sm:pt-10 max-sm:pb-16 lg:py-24">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 max-sm:gap-8 lg:grid-cols-[1.05fr_1fr] lg:gap-20 lg:px-8">
         <Reveal>
           <div className="relative">
