@@ -25,7 +25,7 @@ import {
 import { Reveal } from "./Reveal";
 import { CLINIC, whatsappLink } from "@/lib/clinic";
 import estruturaImg from "@/assets/estrutura-clinica.jpg";
-import sorrisoImg from "@/assets/sorriso-new.jpg";
+import sorrisoImg from "@/assets/pexels-nick-souza-225420956-11999471.jpg";
 import tratImplante from "@/assets/trat-implante-new.jpg";
 import tratOrto from "@/assets/trat-orto-new.jpg";
 import tratEstetica from "@/assets/trat-estetica-new.jpg";
