@@ -36,6 +36,7 @@ import blogEscovacao from "@/assets/blog-escovacao.jpg";
 import blogEscova from "@/assets/blog-escova.jpg";
 import blogImplante from "@/assets/blog-implante.jpg";
 import blogClareamento from "@/assets/blog-clareamento.jpg";
+import blogPreventiva from "@/pexels-marcus-aurelius-9788575.jpg";
 import draFoto1 from "@/assets/dra-danielle.jpeg";
 
 function SectionTitle({
@@ -722,7 +723,7 @@ const posts = [
     d: "Entenda como a anestesia tópica e as técnicas minimamente invasivas tornam a grande maioria dos procedimentos indolor — e como acompanhamos você em cada etapa para garantir conforto total.",
     cat: "Perguntas frequentes",
     data: "Guia completo",
-    img: blogEscovacao,
+    img: blogPreventiva,
     conteudo: [
       "O medo de sentir dor é uma das principais razões que fazem as pessoas adiarem a ida ao dentista. A boa notícia é que a odontologia moderna tem como prioridade o conforto do paciente, e a grande maioria dos procedimentos é realizada de forma indolor.",
       "Na Bella Odontologia, iniciamos cada atendimento com uma conversa clara sobre o que será feito. Em seguida, usamos anestesia tópica — um gel adormecedor — antes de qualquer injeção, reduzindo drasticamente a sensibilidade na região. As técnicas minimamente invasivas também ajudam: quanto mais preciso o tratamento, menor o trauma aos tecidos e, consequentemente, o desconforto pós-operatório.",
