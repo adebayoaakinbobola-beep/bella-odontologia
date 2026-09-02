@@ -95,7 +95,7 @@ export function ProvaSocial() {
   ];
   return (
     <section className="border-y border-border bg-background">
-      <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border lg:px-8">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-4 gap-y-5 px-5 pt-6 pb-14 sm:gap-8 sm:py-10 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border lg:px-8">
         {itens.map((i) => (
           <div key={i.destaque} className="lg:px-8 lg:first:pl-0 lg:last:pr-0">
             <p className="font-display text-2xl text-primary">{i.destaque}</p>
