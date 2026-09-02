@@ -35,7 +35,7 @@ import tratCanal from "@/assets/pexels-mm-dental-56682202-8176834.jpg";
 import blogEscovacao from "@/assets/blog-escovacao.jpg";
 import blogEscova from "@/assets/blog-escova.jpg";
 import blogImplanteFaq from "@/assets/pexels-tima-miroshnichenko-5355723.jpg";
-import blogClareamento from "@/assets/blog-clareamento.jpg";
+import blogClareamento from "@/assets/pexels-gustavo-fring-5622262.jpg";
 import blogPreventiva from "@/pexels-marcus-aurelius-9788575.jpg";
 import draFoto1 from "@/assets/dra-danielle.jpeg";
 import draFoto2 from "@/assets/dra-danielle-1.jpeg";
