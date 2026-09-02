@@ -30,7 +30,7 @@ import tratImplante from "@/assets/trat-implante-new.jpg";
 import tratOrto from "@/assets/trat-orto-new.jpg";
 import tratEstetica from "@/assets/trat-estetica-new.jpg";
 import tratGeral from "@/assets/trat-geral-new.jpg";
-import tratCanal from "@/assets/trat-canal-new.jpg";
+import tratCanal from "@/assets/pexels-mm-dental-56682202-8176834.jpg";
 import blogEscovacao from "@/assets/blog-escovacao.jpg";
 import blogEscova from "@/assets/blog-escova.jpg";
 import blogImplante from "@/assets/blog-implante.jpg";
