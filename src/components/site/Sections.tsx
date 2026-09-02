@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Sparkles,
   Anchor,
@@ -38,6 +38,8 @@ import blogImplante from "@/assets/blog-implante.jpg";
 import blogClareamento from "@/assets/blog-clareamento.jpg";
 import blogPreventiva from "@/pexels-marcus-aurelius-9788575.jpg";
 import draFoto1 from "@/assets/dra-danielle.jpeg";
+import draFoto2 from "@/assets/dra-danielle-1.jpeg";
+import draFoto3 from "@/assets/dra-danielle-2.jpeg";
 
 function SectionTitle({
   eyebrow,
@@ -451,20 +453,67 @@ const especialidades = [
   "Reabilitação Oral",
 ];
 
+const fotosDraDanielle = [draFoto1, draFoto2, draFoto3];
+
 export function Equipe() {
+  const [fotoAtual, setFotoAtual] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setFotoAtual((atual) => (atual + 1) % fotosDraDanielle.length);
+    }, 5000);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
+  const navegar = (direcao: 1 | -1) => {
+    setFotoAtual(
+      (atual) => (atual + direcao + fotosDraDanielle.length) % fotosDraDanielle.length,
+    );
+  };
+
   return (
     <section id="equipe" className="bg-cream py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionTitle eyebrow="Responsável Técnica" title="Quem cuida do seu sorriso" />
         <Reveal>
           <div className="mt-14 grid items-center gap-12 rounded-lg bg-card p-8 shadow-soft lg:grid-cols-[0.85fr_1fr] lg:gap-16 lg:p-12">
-            <div className="overflow-hidden rounded-lg bg-muted">
+            <div className="group relative h-[480px] overflow-hidden rounded-lg bg-muted sm:h-[600px]">
               <img
-                src={draFoto1}
+                key={fotosDraDanielle[fotoAtual]}
+                src={fotosDraDanielle[fotoAtual]}
                 alt="Dra. Danielle C. Lourenço, cirurgiã-dentista da Bella Odontologia"
                 loading="lazy"
-                className="h-[420px] w-full object-cover object-top sm:h-[520px]"
+                className="h-full w-full object-contain object-center slideshow-image"
               />
+              <button
+                type="button"
+                onClick={() => navegar(-1)}
+                aria-label="Foto anterior da Dra. Danielle"
+                className="absolute top-1/2 left-3 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-primary-foreground/50 bg-primary/65 text-primary-foreground shadow-soft backdrop-blur-sm transition-opacity duration-300 hover:bg-primary sm:left-5 sm:opacity-0 sm:group-hover:opacity-100 sm:focus-visible:opacity-100"
+              >
+                <ChevronLeft className="h-5 w-5" aria-hidden />
+              </button>
+              <button
+                type="button"
+                onClick={() => navegar(1)}
+                aria-label="Próxima foto da Dra. Danielle"
+                className="absolute top-1/2 right-3 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-primary-foreground/50 bg-primary/65 text-primary-foreground shadow-soft backdrop-blur-sm transition-opacity duration-300 hover:bg-primary sm:right-5 sm:opacity-0 sm:group-hover:opacity-100 sm:focus-visible:opacity-100"
+              >
+                <ChevronRight className="h-5 w-5" aria-hidden />
+              </button>
+              <div className="absolute right-0 bottom-4 left-0 flex justify-center gap-2">
+                {fotosDraDanielle.map((foto, indice) => (
+                  <button
+                    key={foto}
+                    type="button"
+                    onClick={() => setFotoAtual(indice)}
+                    aria-label={`Exibir foto ${indice + 1} da Dra. Danielle`}
+                    aria-current={fotoAtual === indice ? "true" : undefined}
+                    className={`h-2 rounded-full transition-all duration-300 ${fotoAtual === indice ? "w-6 bg-primary" : "w-2 bg-primary/35 hover:bg-primary/70"}`}
+                  />
+                ))}
+              </div>
             </div>
             <div>
               <h3 className="font-display text-4xl sm:text-5xl text-foreground">
