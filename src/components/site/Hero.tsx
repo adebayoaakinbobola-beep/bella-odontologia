@@ -57,7 +57,7 @@ export function Hero() {
             </a>
           </div>
 
-          <dl className="mt-7 grid max-w-xl grid-cols-2 gap-y-4 border-t border-primary-foreground/20 pt-5 sm:mt-16 sm:grid-cols-3 sm:pt-8">
+          <dl className="mt-6 grid max-w-xl grid-cols-2 gap-x-4 gap-y-3 border-t border-primary-foreground/20 pt-4 sm:mt-16 sm:grid-cols-3 sm:gap-x-0 sm:pt-8">
             <div>
               <dt
                 className="flex items-center gap-1.5"
