@@ -47,12 +47,16 @@ function SectionTitle({
   description,
   light = false,
   align = "center",
+  titleClassName = "",
+  descriptionClassName = "",
 }: {
   eyebrow: string;
   title: string;
   description?: string;
   light?: boolean;
   align?: "center" | "left";
+  titleClassName?: string;
+  descriptionClassName?: string;
 }) {
   return (
     <div
@@ -65,13 +69,13 @@ function SectionTitle({
       <p className={`kicker pt-3 lg:w-40 ${light ? "text-gold" : "text-teal"}`}>{eyebrow}</p>
       <div>
         <h2
-          className={`font-display text-[2rem] leading-[1.08] sm:text-[2.9rem] ${light ? "text-primary-foreground" : "text-foreground"}`}
+          className={`font-display text-[2rem] leading-[1.08] sm:text-[2.9rem] ${light ? "text-primary-foreground" : "text-foreground"} ${titleClassName}`}
         >
           {title}
         </h2>
         {description && (
           <p
-            className={`mt-5 max-w-xl text-[0.95rem] leading-relaxed ${light ? "text-primary-foreground/75" : "text-muted-foreground"}`}
+            className={`mt-5 max-w-xl text-[0.95rem] leading-relaxed ${light ? "text-primary-foreground/75" : "text-muted-foreground"} ${descriptionClassName}`}
           >
             {description}
           </p>
@@ -733,10 +737,14 @@ export const faqs = [
 export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="bg-background py-16 lg:py-24">
+    <section id="faq" className="bg-background py-16 max-md:pt-10 max-md:pb-24 lg:py-24">
       <div className="mx-auto max-w-[800px] px-5 lg:px-8">
-        <SectionTitle eyebrow="FAQ" title="Perguntas frequentes" />
-        <div className="mt-12 divide-y divide-border">
+        <SectionTitle
+          eyebrow="FAQ"
+          title="Perguntas frequentes"
+          titleClassName="max-sm:text-[1.75rem]"
+        />
+        <div className="mt-12 divide-y divide-border max-md:mt-7">
           {faqs.map((f, i) => {
             const isOpen = open === i;
             return (
@@ -744,10 +752,10 @@ export function FAQ() {
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-5 py-6 text-left"
+                  className="flex w-full items-center justify-between gap-5 py-6 text-left max-sm:gap-3 max-sm:py-4"
                 >
-                  <span className="font-display text-lg sm:text-xl">{f.q}</span>
-                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-secondary text-primary">
+                  <span className="font-display text-lg sm:text-xl max-sm:text-base">{f.q}</span>
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-secondary text-primary max-sm:h-8 max-sm:w-8">
                     {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                   </span>
                 </button>
@@ -756,7 +764,9 @@ export function FAQ() {
                   style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
                 >
                   <div className="overflow-hidden">
-                    <p className="pb-6 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
+                    <p className="pb-6 text-sm leading-relaxed text-muted-foreground max-sm:pb-4">
+                      {f.a}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -843,14 +853,18 @@ function ArticleCard({
           src={post.img}
           alt={post.t}
           loading="lazy"
-          className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-[1.04] sm:h-80"
+          className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-[1.04] sm:h-80 max-md:h-auto max-md:aspect-[16/9]"
         />
-        <div className="p-8">
-          <p className="text-xs font-semibold tracking-[0.2em] text-teal uppercase">
+        <div className="p-8 max-md:p-5">
+          <p className="text-xs font-semibold tracking-[0.2em] text-teal uppercase max-md:text-[11px]">
             {post.cat} · {post.data}
           </p>
-          <h3 className="mt-4 font-display text-2xl leading-snug sm:text-3xl">{post.t}</h3>
-          <p className="mt-3 leading-relaxed text-muted-foreground">{post.d}</p>
+          <h3 className="mt-4 font-display text-2xl leading-snug sm:text-3xl max-md:mt-3 max-md:text-xl max-md:leading-tight">
+            {post.t}
+          </h3>
+          <p className="mt-3 leading-relaxed text-muted-foreground max-md:mt-2 max-md:text-sm max-md:leading-relaxed">
+            {post.d}
+          </p>
 
           <div
             className="grid transition-all duration-300 ease-out"
@@ -889,7 +903,7 @@ function ArticleCard({
   }
 
   return (
-    <article className="group grid grid-cols-[110px_minmax(0,1fr)] items-start gap-5 overflow-hidden rounded-lg bg-card p-4 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-elevated sm:grid-cols-[160px_minmax(0,1fr)]">
+    <article className="group grid grid-cols-[110px_minmax(0,1fr)] items-start gap-5 overflow-hidden rounded-lg bg-card p-4 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-elevated sm:grid-cols-[160px_minmax(0,1fr)] max-md:gap-3 max-md:p-3">
       <img
         src={post.img}
         alt={post.t}
@@ -897,9 +911,15 @@ function ArticleCard({
         className="h-28 w-full rounded-lg object-cover sm:h-32"
       />
       <div className="min-w-0">
-        <p className="text-[11px] font-semibold tracking-[0.2em] text-teal uppercase">{post.cat}</p>
-        <h3 className="mt-2 font-display text-lg leading-snug">{post.t}</h3>
-        <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{post.d}</p>
+        <p className="text-[11px] font-semibold tracking-[0.2em] text-teal uppercase max-md:text-[10px]">
+          {post.cat}
+        </p>
+        <h3 className="mt-2 font-display text-lg leading-snug max-md:text-base max-md:leading-tight">
+          {post.t}
+        </h3>
+        <p className="mt-1 text-sm leading-relaxed text-muted-foreground max-md:text-[0.8rem] max-md:leading-relaxed">
+          {post.d}
+        </p>
 
         <div
           className="grid transition-all duration-300 ease-out"
@@ -944,15 +964,17 @@ export function Blog() {
   const toggle = (titulo: string) => setAberto((atual) => (atual === titulo ? null : titulo));
 
   return (
-    <section id="blog" className="bg-cream py-16 lg:py-24">
+    <section id="blog" className="bg-cream py-16 max-md:pb-24 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionTitle
-          eyebrow="Blog"
+          eyebrow="BLOG"
           title="Conteúdo sobre saúde bucal"
           description="Informação confiável, escrita por quem cuida de sorrisos todos os dias."
+          titleClassName="max-md:text-[1.75rem] max-md:leading-[1.05]"
+          descriptionClassName="max-md:mt-3 max-md:text-sm"
         />
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-2">
+        <div className="mt-14 grid gap-8 max-md:mt-7 max-md:gap-5 lg:grid-cols-2">
           <Reveal>
             <ArticleCard
               post={destaque}
