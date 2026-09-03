@@ -255,7 +255,7 @@ export function Tratamentos() {
           description="Da prevenção à alta estética, todos os procedimentos são realizados com protocolos atualizados e materiais premium."
         />
 
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
           {tratamentos.map((t, i) => (
             <Reveal key={t.nome} delay={(i % 3) * 90}>
               <a
@@ -264,7 +264,7 @@ export function Tratamentos() {
                 rel="noopener"
                 className="group flex h-full flex-col overflow-hidden rounded-lg bg-card shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-elevated"
               >
-                <div className="relative h-52 overflow-hidden">
+                <div className="relative h-44 overflow-hidden sm:h-52">
                   <img
                     src={t.img}
                     alt={`${t.nome} na Bella Odontologia`}
@@ -277,12 +277,12 @@ export function Tratamentos() {
                     <t.icon className="h-5 w-5" aria-hidden />
                   </span>
                 </div>
-                <div className="flex flex-1 flex-col p-7">
+                <div className="flex flex-1 flex-col p-6 sm:p-7">
                   <h3 className="font-display text-xl">{t.nome}</h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground sm:mt-3">
                     {t.desc}
                   </p>
-                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary sm:mt-6">
                     Saiba mais
                     <ArrowRight
                       className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
