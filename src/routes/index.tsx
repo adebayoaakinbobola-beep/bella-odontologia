@@ -106,7 +106,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background max-md:pb-[calc(112px+env(safe-area-inset-bottom))]">
+    <div className="min-h-screen bg-background max-md:pb-[calc(80px+env(safe-area-inset-bottom))]">
       <Header />
       <main>
         <Hero />
