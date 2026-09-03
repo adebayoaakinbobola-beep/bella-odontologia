@@ -26,7 +26,7 @@ export function Hero() {
 
       <div className="mx-auto grid max-w-[1440px] gap-16 px-5 pt-16 pb-14 max-md:pt-12 max-md:pb-8 sm:px-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:pt-36 lg:pb-24">
         <div className="max-w-2xl">
-          <p className="kicker text-gold max-md:whitespace-nowrap max-md:text-[0.58rem] max-md:tracking-[0.18em]">
+          <p className="kicker block w-full max-w-full text-gold max-md:whitespace-nowrap max-md:text-[0.625rem] max-md:tracking-[0.12em]">
             Clínica odontológica · Francisco Beltrão · PR
           </p>
 
