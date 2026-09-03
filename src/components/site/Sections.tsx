@@ -593,7 +593,7 @@ function GoogleIcon({ className = "h-5 w-5" }: { className?: string }) {
 export function Depoimentos() {
   const [i, setI] = useState(0);
   return (
-    <section id="depoimentos" className="bg-background py-16 max-sm:pt-10 max-sm:pb-20 lg:py-24">
+    <section id="depoimentos" className="bg-background py-16 max-sm:pt-10 max-sm:pb-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionTitle
           eyebrow="Avaliações"
