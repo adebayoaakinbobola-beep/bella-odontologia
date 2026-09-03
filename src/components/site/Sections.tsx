@@ -419,7 +419,7 @@ const etapas = [
 
 export function ComoFunciona() {
   return (
-    <section className="bg-background py-16 max-sm:pt-12 max-sm:pb-20 lg:py-24">
+    <section className="bg-background py-16 max-sm:pt-12 max-sm:pb-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionTitle eyebrow="Como funciona" title="Um caminho simples até o seu novo sorriso" />
         <div className="relative mt-10 sm:mt-16">
@@ -477,7 +477,7 @@ export function Equipe() {
   };
 
   return (
-    <section id="equipe" className="bg-cream py-16 lg:py-24">
+    <section id="equipe" className="bg-cream py-16 max-sm:pt-10 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionTitle eyebrow="Responsável Técnica" title="Quem cuida do seu sorriso" />
         <Reveal>
