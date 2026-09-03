@@ -124,8 +124,9 @@ export function Agendamento() {
         </div>
 
         <form
+          id="agendamento-form"
           onSubmit={onSubmit}
-          className="rounded-lg border border-border bg-card p-7 shadow-card sm:p-9 max-md:p-5 max-md:pb-14"
+          className="scroll-mt-24 rounded-lg border border-border bg-card p-7 shadow-card sm:p-9 max-md:scroll-mt-24 max-md:p-5 max-md:pb-14"
         >
           <div className="grid gap-5 sm:grid-cols-2 max-md:gap-3">
             <div className="sm:col-span-2">

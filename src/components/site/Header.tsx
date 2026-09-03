@@ -190,7 +190,7 @@ export function FloatingActions() {
           <ChevronRight className="h-4 w-4 shrink-0 text-white/70 transition-transform group-hover:translate-x-0.5" aria-hidden />
         </a>
         <a
-          href="#agendamento"
+          href="#agendamento-form"
           aria-label="Agendar. Escolha o melhor horário"
           className="group flex min-w-0 min-h-16 items-center gap-2 rounded-lg border border-gold/80 bg-primary px-2.5 text-primary-foreground shadow-[0_6px_18px_rgba(74,20,30,0.2)] transition-all hover:border-gold hover:bg-primary/95 sm:px-3"
         >
