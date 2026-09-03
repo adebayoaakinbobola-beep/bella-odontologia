@@ -481,7 +481,7 @@ export function Equipe() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionTitle eyebrow="Responsável Técnica" title="Quem cuida do seu sorriso" />
         <Reveal>
-          <div className="mt-14 grid items-center gap-12 rounded-lg bg-card p-8 shadow-soft lg:grid-cols-[0.85fr_1fr] lg:gap-16 lg:p-12">
+          <div className="mt-8 grid items-center gap-8 rounded-lg bg-card p-6 shadow-soft max-sm:mt-8 max-sm:gap-8 max-sm:p-6 sm:mt-14 sm:gap-12 sm:p-8 lg:grid-cols-[0.85fr_1fr] lg:gap-16 lg:p-12">
             <div className="group relative h-[480px] overflow-hidden rounded-lg bg-muted sm:h-[600px]">
               <img
                 key={fotosDraDanielle[fotoAtual]}
@@ -523,16 +523,16 @@ export function Equipe() {
               <h3 className="font-display text-4xl sm:text-5xl text-foreground">
                 Dra. Danielle C. Lourenço
               </h3>
-              <p className="mt-3 text-lg font-semibold text-teal">Cirurgiã-Dentista</p>
-              <p className="mt-2 inline-flex items-center gap-2 text-xs tracking-[0.18em] text-muted-foreground uppercase">
+              <p className="mt-2 text-lg font-semibold text-teal sm:mt-3">Cirurgiã-Dentista</p>
+              <p className="mt-1 inline-flex items-center gap-2 text-xs tracking-[0.18em] text-muted-foreground uppercase sm:mt-2">
                 <BadgeCheck className="h-4 w-4 text-gold" aria-hidden /> CRO-PR 22533
               </p>
-              <p className="mt-7 leading-relaxed text-muted-foreground">
+              <p className="mt-5 leading-relaxed text-muted-foreground sm:mt-7">
                 Responsável técnica da Bella Odontologia, dedica-se a oferecer tratamentos com
                 excelência técnica, ética e um olhar humanizado. Cada plano é construído junto com o
                 paciente, unindo diagnóstico preciso, conforto e resultados naturais e duradouros.
               </p>
-              <div className="mt-9 flex flex-wrap gap-3">
+              <div className="mt-7 flex flex-wrap gap-3 sm:mt-9">
                 {especialidades.map((e) => (
                   <span
                     key={e}
@@ -544,7 +544,7 @@ export function Equipe() {
               </div>
               <a
                 href="#agendamento"
-                className="mt-10 inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-5 text-sm font-semibold text-primary-foreground shadow-soft transition-all duration-300 hover:shadow-elevated hover:-translate-y-1"
+                className="mt-8 inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-5 text-sm font-semibold text-primary-foreground shadow-soft transition-all duration-300 hover:shadow-elevated hover:-translate-y-1 sm:mt-10"
               >
                 <CalendarCheck className="h-4 w-4" aria-hidden /> Agendar com a Dra. Danielle
               </a>
