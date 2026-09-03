@@ -158,7 +158,7 @@ export function FloatingActions() {
           </button>
         )}
         <a
-          href={whatsappLink("Olá! Gostaria de agendar uma consulta na Bella Odontologia.")}
+          href={whatsappLink("Olá! Vim pelo site da Bella Odontologia e gostaria de saber mais sobre os tratamentos e agendar uma avaliação.")}
           target="_blank"
           rel="noopener"
           aria-label="Falar no WhatsApp"
@@ -172,7 +172,7 @@ export function FloatingActions() {
       {/* Mobile sticky CTA bar */}
       <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t border-border bg-background/98 p-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] backdrop-blur-md md:hidden">
         <a
-          href={whatsappLink("Olá! Gostaria de agendar uma consulta na Bella Odontologia.")}
+          href={whatsappLink("Olá! Vim pelo site da Bella Odontologia e gostaria de saber mais sobre os tratamentos e agendar uma avaliação.")}
           target="_blank"
           rel="noopener"
           aria-label="Falar no WhatsApp. Tire suas dúvidas agora"
@@ -224,7 +224,7 @@ export function ChatWidget() {
             Fale com nossa equipe
           </p>
           <a
-            href={whatsappLink("Olá! Tenho uma dúvida sobre tratamentos.")}
+            href={whatsappLink("Olá! Vim pelo site da Bella Odontologia e gostaria de saber mais sobre os tratamentos e agendar uma avaliação.")}
             target="_blank"
             rel="noopener"
             className="mt-4 block rounded-lg bg-primary px-3 py-2.5 text-center text-[0.7rem] font-semibold tracking-[0.08em] text-primary-foreground uppercase"

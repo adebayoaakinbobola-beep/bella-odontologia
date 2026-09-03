@@ -50,7 +50,7 @@ export function Hero() {
               <CalendarCheck className="h-4 w-4" aria-hidden /> Agendar minha avaliação
             </a>
             <a
-              href={whatsappLink("Olá! Vim pelo site e quero agendar uma avaliação.")}
+              href={whatsappLink("Olá! Vim pelo site da Bella Odontologia e gostaria de saber mais sobre os tratamentos e agendar uma avaliação.")}
               target="_blank"
               rel="noopener"
               className="inline-flex items-center justify-center gap-3 rounded-lg border-2 border-primary-foreground/50 px-10 py-5 text-[0.78rem] font-semibold tracking-[0.1em] text-primary-foreground uppercase transition-all duration-300 hover:border-gold hover:text-gold hover:bg-primary-foreground/5 hover:shadow-soft sm:py-6"

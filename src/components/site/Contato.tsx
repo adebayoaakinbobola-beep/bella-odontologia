@@ -76,7 +76,7 @@ export function Agendamento() {
 
           <div className="mt-9 space-y-4 max-md:mt-6 max-md:space-y-3">
             <a
-              href={whatsappLink("Olá! Quero agendar uma consulta.")}
+              href={whatsappLink("Olá! Vim pelo site da Bella Odontologia e gostaria de saber mais sobre os tratamentos e agendar uma avaliação.")}
               target="_blank"
               rel="noopener"
               className="flex items-center gap-4 rounded-lg border border-border bg-card p-5 transition-transform hover:-translate-y-0.5 max-md:gap-3 max-md:px-4 max-md:py-3.5"
@@ -254,7 +254,7 @@ export function Localizacao() {
                 {
                   icon: MessageCircle,
                   t: "WhatsApp da clínica",
-                  href: whatsappLink("Olá! Vim pelo site."),
+                  href: whatsappLink("Olá! Vim pelo site da Bella Odontologia e gostaria de saber mais sobre os tratamentos e agendar uma avaliação."),
                 },
                 { icon: Mail, t: CLINIC.email, href: `mailto:${CLINIC.email}` },
                 { icon: Clock, t: CLINIC.hours },

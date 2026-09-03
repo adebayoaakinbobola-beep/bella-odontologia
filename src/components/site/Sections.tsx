@@ -265,7 +265,7 @@ export function Tratamentos() {
           {tratamentos.map((t, i) => (
             <Reveal key={t.nome} delay={(i % 3) * 90}>
               <a
-                href={whatsappLink(`Olá! Quero saber mais sobre ${t.nome}.`)}
+                href={whatsappLink("Olá! Vim pelo site da Bella Odontologia e gostaria de saber mais sobre os tratamentos e agendar uma avaliação.")}
                 target="_blank"
                 rel="noopener"
                 className="group flex h-full flex-col overflow-hidden rounded-lg bg-card shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-elevated"
@@ -306,7 +306,7 @@ export function Tratamentos() {
             {outros.map((o) => (
               <a
                 key={o}
-                href={whatsappLink(`Olá! Quero saber mais sobre ${o}.`)}
+                href={whatsappLink("Olá! Vim pelo site da Bella Odontologia e gostaria de saber mais sobre os tratamentos e agendar uma avaliação.")}
                 target="_blank"
                 rel="noopener"
                 className="rounded-lg border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-teal hover:text-teal"
@@ -385,7 +385,7 @@ export function PorQue() {
         </div>
         <div className="mt-10 text-center sm:mt-16">
           <a
-            href={whatsappLink("Olá! Quero falar com um especialista.")}
+            href={whatsappLink("Olá! Vim pelo site da Bella Odontologia e gostaria de saber mais sobre os tratamentos e agendar uma avaliação.")}
             target="_blank"
             rel="noopener"
             className="inline-flex items-center gap-2 rounded-lg bg-background px-9 py-5 text-sm font-semibold text-primary shadow-soft transition-all duration-300 hover:shadow-elevated hover:-translate-y-1"
@@ -694,7 +694,7 @@ export function CtaFinal() {
             <CalendarCheck className="h-4 w-4" aria-hidden /> Agendar minha avaliação
           </a>
           <a
-            href={whatsappLink("Olá! Quero agendar uma avaliação.")}
+            href={whatsappLink("Olá! Vim pelo site da Bella Odontologia e gostaria de saber mais sobre os tratamentos e agendar uma avaliação.")}
             target="_blank"
             rel="noopener"
             className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-primary-foreground/40 px-10 py-5 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:border-gold hover:text-gold hover:bg-primary-foreground/5"
@@ -879,7 +879,7 @@ function ArticleCard({
                 ))}
               </div>
               <a
-                href={whatsappLink(`Olá! Quero saber mais sobre: ${post.t}`)}
+                href={whatsappLink("Olá! Vim pelo site da Bella Odontologia e gostaria de saber mais sobre os tratamentos e agendar uma avaliação.")}
                 target="_blank"
                 rel="noopener"
                 className="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5"
@@ -934,7 +934,7 @@ function ArticleCard({
               ))}
             </div>
             <a
-              href={whatsappLink(`Olá! Quero saber mais sobre: ${post.t}`)}
+              href={whatsappLink("Olá! Vim pelo site da Bella Odontologia e gostaria de saber mais sobre os tratamentos e agendar uma avaliação.")}
               target="_blank"
               rel="noopener"
               className="mt-4 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5"
