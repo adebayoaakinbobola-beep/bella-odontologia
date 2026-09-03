@@ -419,23 +419,25 @@ const etapas = [
 
 export function ComoFunciona() {
   return (
-    <section className="bg-background py-16 lg:py-24">
+    <section className="bg-background py-16 max-sm:pt-12 max-sm:pb-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionTitle eyebrow="Como funciona" title="Um caminho simples até o seu novo sorriso" />
-        <div className="relative mt-16">
+        <div className="relative mt-10 sm:mt-16">
           <div
             aria-hidden
             className="absolute top-6 right-0 left-0 hidden h-px bg-border lg:block"
           />
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          <div className="grid gap-6 sm:grid-cols-2 sm:gap-10 lg:grid-cols-4 lg:gap-8">
             {etapas.map((e, i) => (
               <Reveal key={e.n} delay={i * 100}>
                 <div className="relative">
                   <span className="relative z-10 grid h-14 w-14 place-items-center rounded-lg bg-primary font-display text-base font-semibold text-primary-foreground shadow-soft">
                     {e.n}
                   </span>
-                  <h3 className="mt-7 font-display text-xl">{e.t}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{e.d}</p>
+                  <h3 className="mt-4 font-display text-xl sm:mt-7">{e.t}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground sm:mt-2">
+                    {e.d}
+                  </p>
                 </div>
               </Reveal>
             ))}
