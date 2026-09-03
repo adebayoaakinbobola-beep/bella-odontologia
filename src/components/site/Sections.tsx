@@ -353,29 +353,31 @@ const diferenciais = [
 
 export function PorQue() {
   return (
-    <section className="gradient-hero py-16 lg:py-24">
+    <section className="gradient-hero py-16 max-sm:pt-10 max-sm:pb-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionTitle
           light
           eyebrow="Diferenciais"
           title="Excelência em cada detalhe do seu tratamento."
         />
-        <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2">
+        <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 sm:mt-14 sm:gap-x-10 sm:gap-y-12">
           {diferenciais.map((d, i) => (
             <Reveal key={d.t} delay={(i % 2) * 90}>
-              <div className="flex gap-5">
+              <div className="flex gap-3 sm:gap-5">
                 <span className="grid h-14 w-14 shrink-0 place-items-center rounded-lg bg-primary-foreground/10 ring-1 ring-gold/50">
                   <d.icon className="h-6 w-6 text-gold" aria-hidden />
                 </span>
                 <div className="min-w-0">
                   <h3 className="font-display text-xl text-primary-foreground">{d.t}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-primary-foreground/75">{d.d}</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-primary-foreground/75 sm:mt-2">
+                    {d.d}
+                  </p>
                 </div>
               </div>
             </Reveal>
           ))}
         </div>
-        <div className="mt-16 text-center">
+        <div className="mt-10 text-center sm:mt-16">
           <a
             href={whatsappLink("Olá! Quero falar com um especialista.")}
             target="_blank"
