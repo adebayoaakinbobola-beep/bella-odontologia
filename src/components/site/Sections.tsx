@@ -672,7 +672,7 @@ export function Depoimentos() {
 
 export function CtaFinal() {
   return (
-    <section className="bg-background px-5 py-16 max-sm:pt-0 lg:px-8 lg:py-20">
+    <section className="bg-background px-5 py-16 max-sm:pt-0 max-sm:pb-0 lg:px-8 lg:py-20">
       <div className="gradient-hero mx-auto max-w-4xl rounded-lg px-8 py-20 text-center shadow-elevated sm:px-16">
         <h2 className="mx-auto max-w-2xl font-display text-3xl leading-tight text-primary-foreground sm:text-4xl lg:text-5xl">
           Pronto para cuidar do seu sorriso?
