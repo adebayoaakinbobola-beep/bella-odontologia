@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, Phone, MessageCircle, X, ArrowUp, CalendarCheck } from "lucide-react";
+import { Menu, Phone, MessageCircle, X, ArrowUp, CalendarCheck, ChevronRight } from "lucide-react";
 import { CLINIC, whatsappLink } from "@/lib/clinic";
 
 const links = [
@@ -170,20 +170,38 @@ export function FloatingActions() {
       </div>
 
       {/* Mobile sticky CTA bar */}
-      <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-border bg-background/98 backdrop-blur-md md:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t border-border bg-background/98 p-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] backdrop-blur-md md:hidden">
         <a
           href={whatsappLink("Olá! Gostaria de agendar uma consulta na Bella Odontologia.")}
           target="_blank"
           rel="noopener"
-          className="inline-flex items-center justify-center gap-2 border-r border-border px-4 py-4 text-[0.72rem] font-semibold tracking-[0.08em] text-foreground uppercase"
+          aria-label="Falar no WhatsApp. Tire suas dúvidas agora"
+          className="group flex min-w-0 min-h-16 items-center gap-2 rounded-lg bg-[#128C7E] px-2.5 text-white shadow-[0_6px_18px_rgba(18,140,126,0.24)] transition-all hover:bg-[#0f7568] sm:px-3"
         >
-          <MessageCircle className="h-4 w-4 text-[#128C7E]" aria-hidden /> WhatsApp
+          <MessageCircle className="h-7 w-7 shrink-0" strokeWidth={1.8} aria-hidden />
+          <span className="min-w-0 flex-1 text-left leading-tight">
+            <span className="block truncate text-[0.76rem] font-semibold sm:text-[0.8rem]">
+              Falar no WhatsApp
+            </span>
+            <span className="mt-1 block truncate text-[0.62rem] text-white/75 sm:text-[0.66rem]">
+              Tire suas dúvidas agora
+            </span>
+          </span>
+          <ChevronRight className="h-4 w-4 shrink-0 text-white/70 transition-transform group-hover:translate-x-0.5" aria-hidden />
         </a>
         <a
           href="#agendamento"
-          className="inline-flex items-center justify-center gap-2 bg-primary px-4 py-4 text-[0.72rem] font-semibold tracking-[0.08em] text-primary-foreground uppercase"
+          aria-label="Agendar. Escolha o melhor horário"
+          className="group flex min-w-0 min-h-16 items-center gap-2 rounded-lg border border-gold/80 bg-primary px-2.5 text-primary-foreground shadow-[0_6px_18px_rgba(74,20,30,0.2)] transition-all hover:border-gold hover:bg-primary/95 sm:px-3"
         >
-          <CalendarCheck className="h-4 w-4" aria-hidden /> Agendar
+          <CalendarCheck className="h-6 w-6 shrink-0 text-gold" strokeWidth={1.8} aria-hidden />
+          <span className="min-w-0 flex-1 text-left leading-tight">
+            <span className="block truncate text-[0.76rem] font-semibold sm:text-[0.8rem]">Agendar</span>
+            <span className="mt-1 block truncate text-[0.62rem] text-primary-foreground/70 sm:text-[0.66rem]">
+              Escolha o melhor horário
+            </span>
+          </span>
+          <ChevronRight className="h-4 w-4 shrink-0 text-gold/80 transition-transform group-hover:translate-x-0.5" aria-hidden />
         </a>
       </div>
     </>
