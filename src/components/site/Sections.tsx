@@ -593,7 +593,7 @@ function GoogleIcon({ className = "h-5 w-5" }: { className?: string }) {
 export function Depoimentos() {
   const [i, setI] = useState(0);
   return (
-    <section id="depoimentos" className="bg-background py-16 lg:py-24">
+    <section id="depoimentos" className="bg-background py-16 max-sm:pt-10 max-sm:pb-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionTitle
           eyebrow="Avaliações"
@@ -622,20 +622,20 @@ export function Depoimentos() {
           ))}
         </div>
 
-        <div className="mt-12 lg:hidden">
-          <figure className="rounded-lg bg-card p-7 shadow-card">
+        <div className="mt-12 max-sm:mt-8 lg:hidden">
+          <figure className="rounded-lg bg-card p-7 shadow-card max-sm:p-6">
             <div className="flex items-center gap-1" aria-label="5 de 5 estrelas">
               {Array.from({ length: 5 }).map((_, s) => (
                 <Star key={s} className="h-4 w-4 fill-gold text-gold" aria-hidden />
               ))}
             </div>
-            <blockquote className="mt-5 leading-relaxed">“{depoimentos[i]!.txt}”</blockquote>
-            <figcaption className="mt-6 flex items-center justify-between gap-3 border-t border-border pt-5">
+            <blockquote className="mt-5 leading-relaxed max-sm:mt-4">“{depoimentos[i]!.txt}”</blockquote>
+            <figcaption className="mt-6 flex items-center justify-between gap-3 border-t border-border pt-5 max-sm:mt-5 max-sm:pt-4">
               <span className="text-sm font-semibold">{depoimentos[i]!.nome}</span>
               <GoogleIcon />
             </figcaption>
           </figure>
-          <div className="mt-6 flex items-center justify-center gap-4">
+          <div className="mt-6 flex items-center justify-center gap-4 max-sm:mt-4 max-sm:gap-3">
             <button
               onClick={() => setI((v) => (v - 1 + depoimentos.length) % depoimentos.length)}
               aria-label="Avaliação anterior"
@@ -653,7 +653,7 @@ export function Depoimentos() {
           </div>
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-center max-sm:mt-8">
           <a
             href={CLINIC.maps}
             target="_blank"
