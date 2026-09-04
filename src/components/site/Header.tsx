@@ -191,6 +191,17 @@ export function FloatingActions() {
         </a>
         <a
           href="#agendamento-form"
+          onClick={(event) => {
+            event.preventDefault();
+            const form = document.getElementById("agendamento-form");
+            const header = document.querySelector("header");
+            if (!form) return;
+
+            const headerHeight = header?.getBoundingClientRect().height ?? 0;
+            const targetPosition =
+              form.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
+            window.scrollTo({ top: Math.max(0, targetPosition), behavior: "smooth" });
+          }}
           aria-label="Agendar. Escolha o melhor horário"
           className="group flex min-w-0 min-h-16 items-center gap-2 rounded-lg border border-gold/80 bg-primary px-2.5 text-primary-foreground shadow-[0_6px_18px_rgba(74,20,30,0.2)] transition-all hover:border-gold hover:bg-primary/95 sm:px-3"
         >
