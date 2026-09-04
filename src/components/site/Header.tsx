@@ -190,16 +190,16 @@ export function FloatingActions() {
           <ChevronRight className="h-4 w-4 shrink-0 text-white/70 transition-transform group-hover:translate-x-0.5" aria-hidden />
         </a>
         <a
-          href="#agendamento-form"
+          href="#agendamento"
           onClick={(event) => {
             event.preventDefault();
-            const form = document.getElementById("agendamento-form");
+            const appointmentSection = document.getElementById("agendamento");
             const header = document.querySelector("header");
-            if (!form) return;
+            if (!appointmentSection) return;
 
             const headerHeight = header?.getBoundingClientRect().height ?? 0;
             const targetPosition =
-              form.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
+              appointmentSection.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
             window.scrollTo({ top: Math.max(0, targetPosition), behavior: "smooth" });
           }}
           aria-label="Agendar. Escolha o melhor horário"
