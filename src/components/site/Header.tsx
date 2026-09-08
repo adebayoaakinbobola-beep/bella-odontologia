@@ -22,16 +22,28 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!open || !window.matchMedia("(max-width: 1023px)").matches) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [open]);
+
   const light = !scrolled && !open;
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        light
-          ? "border-b border-primary-foreground/10 bg-transparent"
-          : "border-b border-border bg-background/95 backdrop-blur-lg shadow-sm"
-      }`}
-    >
+    <>
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+          light
+            ? "border-b border-primary-foreground/10 bg-transparent"
+            : "border-b border-border bg-background/95 backdrop-blur-lg shadow-sm"
+        }`}
+      >
       <div className="mx-auto grid max-w-[1440px] grid-cols-[minmax(0,1fr)_auto] items-center gap-6 px-5 py-4 sm:px-8 lg:grid-cols-[auto_1fr_auto] lg:py-5">
         <a href="#inicio" className="flex min-w-0 items-baseline gap-3">
           <span
@@ -103,8 +115,10 @@ export function Header() {
         </button>
       </div>
 
+      </header>
+
       {open && (
-        <div className="fixed inset-x-0 top-16 bottom-0 border-t border-border bg-background px-5 pb-8 overflow-y-auto lg:hidden">
+        <div className="fixed inset-x-0 top-[53px] bottom-0 z-[60] overflow-y-auto overscroll-contain border-t border-border bg-background px-5 pb-8 lg:hidden">
           <nav className="flex flex-col">
             {links.map((l) => (
               <a
@@ -132,7 +146,7 @@ export function Header() {
           </nav>
         </div>
       )}
-    </header>
+    </>
   );
 }
 
