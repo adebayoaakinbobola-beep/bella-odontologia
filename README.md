@@ -1,6 +1,6 @@
-# Vivid Smile Lab
+# Bella Odontologia
 
-A modern, responsive dental clinic website focused on a clean user experience, professional presentation, and conversion-oriented design.
+A modern, responsive dental clinic website created to give Bella Odontologia a professional digital presence and make it easy for potential patients to learn about the clinic and request an appointment.
 
 ## Live Website
 
@@ -8,18 +8,19 @@ https://vivid-smile-lab.vercel.app
 
 ## Overview
 
-Vivid Smile Lab is a web design and development project for a dental clinic. The site is designed to communicate trust and professionalism while making it easy for visitors to explore the clinic and take action.
+This project is a website for Bella Odontologia, a dental clinic in Francisco Beltrão, Paraná, Brazil.
 
-The project emphasizes responsive layouts, clear visual hierarchy, accessible navigation, strong calls to action, and a polished experience across desktop and mobile devices.
+The experience focuses on trust, clear information, responsive design, and conversion. Visitors can explore the clinic and its treatments, find contact information, and move quickly toward an appointment or WhatsApp conversation.
 
 ## Key Features
 
-- Responsive desktop and mobile layouts
-- Modern dental-clinic interface
+- Responsive desktop and mobile experience
+- Modern, premium dental-clinic interface
 - Clear navigation and mobile menu
-- Conversion-focused calls to action
-- Service and clinic information sections
+- Treatment and clinic information sections
+- WhatsApp and appointment calls to action
 - Reusable UI components
+- SEO-oriented page metadata
 - Responsive layout and spacing refinements
 - Production deployment with Vercel
 
@@ -35,14 +36,25 @@ The project emphasizes responsive layouts, clear visual hierarchy, accessible na
 - Vercel
 - Lovable
 
-## Project Focus
+## My Contribution
 
-The project was developed around four main goals:
+I worked on the design and development of the website, including:
 
-1. Create a professional and trustworthy visual identity.
-2. Provide a clear, intuitive experience on desktop and mobile.
-3. Present dental services and clinic information in an easy-to-understand structure.
-4. Encourage visitors to take the next step through prominent calls to action.
+- UI/UX and visual hierarchy
+- Responsive desktop and mobile layouts
+- Navigation and mobile-menu improvements
+- Landing-page structure and content presentation
+- Conversion-focused calls to action
+- Layout and spacing refinements
+- Frontend implementation and iteration
+- Deployment workflow
+
+## Project Goals
+
+1. Present Bella Odontologia with a professional and trustworthy digital identity.
+2. Provide a polished experience across desktop and mobile devices.
+3. Make treatments, clinic information, and contact options easy to find.
+4. Encourage potential patients to request an appointment or start a WhatsApp conversation.
 
 ## Development
 
@@ -57,4 +69,4 @@ npm run dev
 
 ## Portfolio
 
-This project is part of my web design portfolio and demonstrates my work with responsive web interfaces, UI/UX, frontend development, iteration, and deployment.
+This project is part of my web design portfolio and demonstrates responsive web design, UI/UX, frontend development, iteration, and deployment for a local business.
