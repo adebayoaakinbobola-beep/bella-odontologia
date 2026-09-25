@@ -61,8 +61,8 @@ I worked on the design and development of the website, including:
 To run the project locally:
 
 ```sh
-git clone https://github.com/adebayoaakinbobola-beep/vivid-smile-lab.git
-cd vivid-smile-lab
+git clone https://github.com/adebayoaakinbobola-beep/bella-odontologia.git
+cd bella-odontologia
 npm install
 npm run dev
 ```
