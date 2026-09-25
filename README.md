@@ -4,7 +4,7 @@ A modern, responsive dental clinic website created to give Bella Odontologia a p
 
 ## Live Website
 
-https://vivid-smile-lab.vercel.app
+https://bellaodontologia.vercel.app
 
 ## Overview
 
