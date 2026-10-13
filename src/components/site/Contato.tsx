@@ -386,7 +386,7 @@ export function Footer() {
       </div>
       <div className="border-t border-primary-foreground/15 px-5 py-6 text-center text-xs text-primary-foreground/70 max-md:pb-0">
         © {new Date().getFullYear()} Bella Odontologia · Responsável Técnica: Dra. Danielle C.
-        Lourenço · CRO-PR 22533
+        Lourenço · CRO-PR 29402
       </div>
     </footer>
   );
