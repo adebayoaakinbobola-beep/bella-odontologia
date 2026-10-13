@@ -16,7 +16,7 @@ Patients in Francisco Beltrão (PR) and surrounding region seeking premium, high
 To serve as a premium, sophisticated digital showcase for Bella Odontologia that educates potential patients and drives high-intent appointment requests/WhatsApp inquiries.
 
 ## Positioning
-A luxury healthcare experience in Francisco Beltrão that combines rigorous clinical excellence (led by Dra. Danielle C. Lourenço, CRO-PR 22533) with a deeply personalized, humanized, and comfortable treatment journey.
+A luxury healthcare experience in Francisco Beltrão that combines rigorous clinical excellence (led by Dra. Danielle C. Lourenço, CRO-PR 29402) with a deeply personalized, humanized, and comfortable treatment journey.
 
 ## Operating Context
 - Primarily accessed by mobile users on-the-go or looking for contact info.
@@ -37,7 +37,7 @@ A luxury healthcare experience in Francisco Beltrão that combines rigorous clin
 - **Tone Boundary**: Avoid clinical sterility, generic templates, excessive card layouts, futuristic dental aesthetics, and plastic-looking AI imagery.
 
 ## Evidence on Hand
-- **Registered Professional**: Dra. Danielle C. Lourenço (CRO-PR 22533)
+- **Registered Professional**: Dra. Danielle C. Lourenço (CRO-PR 29402)
 - **Verified Location**: R. Ver. Romeu Lauro Werlang, 822 - Centro, Francisco Beltrão - PR, 85601-020
 - **Google Reviews**: 5.0 average based on 12 verified reviews.
 - **Existing Assets**: Local clinical structure photos (`estrutura-clinica.jpg`, etc.) and real photos of the leading dentist (`dra-danielle.jpeg`).
