@@ -93,7 +93,7 @@ export function ProvaSocial() {
       destaque: `${CLINIC.rating.toFixed(1)}`,
       label: `Avaliação no Google · ${CLINIC.reviews} avaliações`,
     },
-    { destaque: "CRO-PR 22533", label: "Clínica com responsável técnica registrada" },
+    { destaque: "CRO-PR 29402", label: "Clínica com responsável técnica registrada" },
     { destaque: "12x", label: "Parcelamento disponível" },
     { destaque: "Seg–Sáb", label: "Atendimento de segunda a sábado" },
   ];
@@ -531,7 +531,7 @@ export function Equipe() {
               </h3>
               <p className="mt-2 text-lg font-semibold text-teal sm:mt-3">Cirurgiã-Dentista</p>
               <p className="mt-1 inline-flex items-center gap-2 text-xs tracking-[0.18em] text-muted-foreground uppercase sm:mt-2">
-                <BadgeCheck className="h-4 w-4 text-gold" aria-hidden /> CRO-PR 22533
+                <BadgeCheck className="h-4 w-4 text-gold" aria-hidden /> CRO-PR 29402
               </p>
               <p className="mt-5 leading-relaxed text-muted-foreground sm:mt-7">
                 Responsável técnica da Bella Odontologia, dedica-se a oferecer tratamentos com
